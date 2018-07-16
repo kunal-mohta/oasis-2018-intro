@@ -54,6 +54,8 @@ static/src/stylesheets/icons/*
 
 # emacs temp #
 **~
+# vim temp #
+*.swp
 
 # Eclipse #
 .project
