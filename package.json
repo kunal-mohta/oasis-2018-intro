@@ -1,0 +1,30 @@
+{
+  "name": "oasis-2018-intro",
+  "version": "1.0.0",
+  "description": "Oasis intro site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvm-bitspilani/oasis-2018-intro.git"
+  },
+  "keywords": [
+    "Oasis",
+    "2018",
+    "DVM",
+    "BITS",
+    "Intro"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dvm-bitspilani/oasis-2018-intro/issues"
+  },
+  "homepage": "https://github.com/dvm-bitspilani/oasis-2018-intro#readme",
+  "devDependencies": {
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
