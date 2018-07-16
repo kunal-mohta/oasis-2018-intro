@@ -1,5 +1,5 @@
 const path = require('path')
-const htmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	entry: path.resolve(__dirname, "src/js/index.js"), 
@@ -8,10 +8,18 @@ module.exports = {
 		filename: "bundle.js",
 	}, 
 	module: {
-		rules: [],	
+		rules: [
+			{
+				test: /\.js$/,
+				use: 'babel-loader',
+				exclude: [
+					/node_modules/	
+				]
+			}
+		],	
 	},
 	plugins: [
-		new htmlWebpackPlugin({
+		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src/index.html"), 
 			inject: 'body'
 		})	
