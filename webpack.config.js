@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -13,7 +14,8 @@ module.exports = {
 	},
 	devtool: 'inline-source-map',
 	devServer: {
-		contentBase: './dist'
+		contentBase: './dist',
+		//hot: true,
 	},
 	module: {
 		rules: [
@@ -27,7 +29,15 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
-			} ,
+			},
+			{
+				test: /\.(png|svg|jpe?g|gif)$/,
+				use: ['file-loader'],
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: ['file-loader'],
+			}
 		],	
 	},
 	plugins: [
@@ -37,8 +47,9 @@ module.exports = {
 			inject: 'body'
 		}),
 		new CopyWebpackPlugin([
-			{ from: 'src/assets', to: 'assets'}	
+			{ from: 'src/static', to: 'static'}	
 		]),
+		//new webpack.HotModuleReplacementPlugin(),
 		//new UglifyJSPlugin(),
 	],
 }
