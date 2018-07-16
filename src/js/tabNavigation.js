@@ -44,7 +44,7 @@ function navigateToTab (pageName) {
 }
 
 //binding onclick events
-for (page in pages) {
+for (let page in pages) {
   //creating a closure
   (function () {
     var pageName = pages[page].name;
