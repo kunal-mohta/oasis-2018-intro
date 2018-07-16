@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
 	//entry: path.resolve(__dirname, "src/js/index.js"), 
@@ -35,6 +36,9 @@ module.exports = {
 			template: path.resolve(__dirname, "src", "index.html"), 
 			inject: 'body'
 		}),
+		new CopyWebpackPlugin([
+			{ from: 'src/assets', to: 'assets'}	
+		]),
 		//new UglifyJSPlugin(),
 	],
 }
