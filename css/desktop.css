@@ -1,0 +1,65 @@
+/* desktop */
+@media all and ( min-width: 600px ) {
+  .main-container {
+    width: 90vw;
+    height: 80vh;
+    position: relative;
+    border: solid 1px black; /* temporary */
+  }
+
+  /* navigation */
+  #nav {
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px black; /* temporary */
+  }
+
+  #logo {
+    height: 100%;
+    width: 10%;
+    border: solid 1px black; /* temporary */
+  }
+
+  #nav-list {
+    list-style: none;
+    display: flex;
+  }
+
+  #nav-list li {
+    padding: 0 5px;
+  }
+
+  #nav-list li:hover {
+    cursor: pointer;
+  }
+
+  /* main body */
+  #main-body {
+    height: 75%;
+    width: 48%;
+    position: absolute;
+    top: 15%;
+    border: solid 1px black; /* temporary */
+  }
+
+  .content-page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .content-page:not(#home) {
+    display: none;
+  }
+
+  /* sub theme scroll */
+
+  /* social media */
+
+  /* days countdown */
+}

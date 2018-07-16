@@ -1,0 +1,27 @@
+/* common */
+
+html, body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* navigation */
+
+/* main body */
+
+/* sub theme scroll */
+
+/* social media */
+
+/* days countdown */
