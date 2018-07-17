@@ -46,7 +46,7 @@ config = {
 		],	
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
+		//new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"), 
 			inject: 'body'
@@ -60,7 +60,7 @@ if(fs.existsSync(path.resolve(__dirname, "src", "static"))) {
 	config.plugins.push(
 		new CopyWebpackPlugin([
 			{ from: 'src/static', to: 'static'}	
-		])
+		]),
 	);
 }
 

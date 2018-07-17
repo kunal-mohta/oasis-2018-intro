@@ -2,12 +2,7 @@
 
 import "./tabNavigation"
 
-//import "../css/common.css"
-//import "../css/desktop.css"
-//import "../css/handheld.css"
-
 import "../css"
-
 
 class TestClass {
 	constructor(msg){
