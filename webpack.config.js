@@ -38,6 +38,10 @@ config = {
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: ['file-loader'],
+			},
+			{
+				test: /\.html$/, 
+				use: ['html-loader'],
 			}
 		],	
 	},
@@ -47,9 +51,8 @@ config = {
 			template: path.resolve(__dirname, "src", "index.html"), 
 			inject: 'body'
 		}),
-		
-		//new webpack.HotModuleReplacementPlugin(),
 		//new UglifyJSPlugin(),
+		//new webpack.HotModuleReplacementPlugin(),
 	],
 }
 

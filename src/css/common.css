@@ -17,9 +17,10 @@ html, body {
 }
 
 /*To test the file-loader plugin in webpack*/
-#main-body{
+
+/*#main-body{
 	background-image: url('../assets/s-l300.jpg');
-}
+}*/
 
 /* navigation */
 
