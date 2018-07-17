@@ -1,10 +1,10 @@
 /* handhelds */
 @media all and ( max-width: 600px ) {
-  .main-container {
-    height: 100%;
-    width: 100%;
-    border: solid 1px black;
-  }
+    .main-container {
+        height: 100%;
+        width: 100%;
+        border: solid 1px black;
+    }
 }
 
 /* navigation */
