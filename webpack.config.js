@@ -22,11 +22,19 @@ config = {
 		rules: [
 			{
 				test: /\.js$/,
-				use: 'babel-loader',
+				use: [
+          'babel-loader',
+          'eslint-loader'
+        ],
 				exclude: [
 					/node_modules/
 				]
-			},
+      },
+      {
+        test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+        loader: 'htmllint-loader',
+        exclude: /(node_modules)/,
+      },
 			{
 				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
@@ -42,7 +50,7 @@ config = {
 			{
 				test: /\.html$/, 
 				use: ['html-loader'],
-			}
+      }
 		],	
 	},
 	plugins: [
@@ -50,7 +58,7 @@ config = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"), 
 			inject: 'body'
-		}),
+    })
 		//new UglifyJSPlugin(),
 		//new webpack.HotModuleReplacementPlugin(),
 	],

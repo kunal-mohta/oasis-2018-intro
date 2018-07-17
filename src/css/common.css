@@ -1,7 +1,7 @@
 /* common */
 
 html, body {
-  position: relative;
+ position: relative;
   margin: 0;
   height: 100vh;
   width: 100vw;
@@ -19,7 +19,7 @@ html, body {
 /*To test the file-loader plugin in webpack*/
 
 #main-body{
-	background-image: url('../assets/s-l300.jpg');
+	background-image: url('../assets/imgs/asdf.png');
 }
 
 /* navigation */
