@@ -59,24 +59,50 @@
 
     /*home*/
     .home-heading{
-    font-family: "roboto"; /*change font here*/
-    font-size: 4vw;
-    padding: 10px;
+        font-family: "roboto"; /*change font here*/
+        font-size: 4vw;
+        padding: 10px;
     }
 
     .home-content{
-    font-family: "roboto"; /*change font here*/
-    font-size: 20px;
-    padding: 10px;
+        font-family: "roboto"; /*change font here*/
+        font-size: 20px;
+        padding: 10px;
     }
 
     .home-teaser{
-    color: black; /*color to be changes according to theme*/
-    font-family: "roboto"; /*change font here*/
-    font-size: 27px;
-    margin: 50px 10px 0px 10px;
-    padding: 5px;
-    cursor: pointer;
+        color: black; /*color to be changes according to theme*/
+        font-family: "roboto"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    /*about*/
+    .about-heading{
+        color: black; /*color to be changes according to theme*/
+        font-family: roboto; /*change font here*/
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .about-content{
+        color: black; /*to be changes to white later*/
+        font-size: 14px;
+    }
+
+    .about-content p{
+        margin: 5px 10px 10px 10px;
+    }
+
+    .about-download{
+        color: black; /*color to be changes according to theme*/
+        font-family: "roboto"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+        cursor: pointer;
     }
 
     /* sub theme scroll */
