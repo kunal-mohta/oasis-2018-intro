@@ -1,11 +1,12 @@
 const path = require('path')
+const fs = require('fs')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-module.exports = {
+config = {
 	//entry: path.resolve(__dirname, "src/js/index.js"), 
 	entry: path.resolve(__dirname, "src", "js", "index.js"), 
 	output: {
@@ -46,11 +47,18 @@ module.exports = {
 			template: path.resolve(__dirname, "src", "index.html"), 
 			inject: 'body'
 		}),
-		new CopyWebpackPlugin([
-			{ from: 'src/static', to: 'static'}	
-		]),
+		
 		//new webpack.HotModuleReplacementPlugin(),
 		//new UglifyJSPlugin(),
 	],
 }
 
+if(fs.existsSync(path.resolve(__dirname, "src", "static"))) {
+	config.plugins.push(
+		new CopyWebpackPlugin([
+			{ from: 'src/static', to: 'static'}	
+		])
+	);
+}
+
+module.exports = config
