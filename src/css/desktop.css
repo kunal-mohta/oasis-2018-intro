@@ -105,7 +105,46 @@
         padding: 5px;
         cursor: pointer;
     }
+    
+    /*videos*/
+    .videos-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        align-content: stretch;
+        flex-wrap: wrap;
+        overflow: scroll;
+    }
 
+    .video-img {
+        flex-grow: 1;
+        font-size: 132%;
+    }
+
+    .img-heading {
+        padding-bottom: 4%;
+    }
+    
+    /*contacts*/
+    .contact-heading{
+        color: black; /*color to be changes according to theme*/
+        font-family: roboto; /*change font here*/
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .contact-content{
+        font-family: "roboto"; /*change font here*/
+        font-size: 17px;
+        padding: 10px;
+    }
     /* sub theme scroll */
 
     /* social media */
