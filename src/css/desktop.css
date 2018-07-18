@@ -57,9 +57,79 @@
         display: none;
     }
 
+    /*home*/
+    .home-heading{
+        font-family: "ikaros"; /*change font here*/
+        font-size: 5vw;
+        padding: 10px;
+    }
+
+    .home-content{
+        font-family: 'Roboto', sans-serif; /*change font here*/
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .home-teaser{
+        color: black; /*color to be changes according to theme*/
+        font-family: "ikaros"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    /*about*/
+    .about-heading{
+        color: black; /*color to be changes according to theme*/
+        font-family: "ikaros"; /*change font here*/
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .about-content{
+        color: black; /*to be changes to white later*/
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .about-content p{
+        margin: 5px 10px 10px 10px;
+    }
+
+    .about-download{
+        color: black; /*color to be changes according to theme*/
+        font-family: "ikaros"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
     /* sub theme scroll */
 
     /* social media */
 
+    #social-media{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        right: 300px;
+    }
+
+    .social-icon{
+        width: 30px;
+        margin: 0 12px 0 12px;
+        cursor: pointer;
+    }
+
     /* days countdown */
+
+    #days-countdown{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        font-size: 24px;
+        font-family: "ikaros";
+    }
 }
