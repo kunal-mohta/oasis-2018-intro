@@ -130,18 +130,19 @@
 
     .img-heading {
         padding-bottom: 4%;
+        font-family: "ikaros";
     }
     
     /*contacts*/
     .contact-heading{
         color: black; /*color to be changes according to theme*/
-        font-family: roboto; /*change font here*/
+        font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
     }
 
     .contact-content{
-        font-family: "roboto"; /*change font here*/
+        font-family: "roboto", sans-serif; /*change font here*/
         font-size: 17px;
         padding: 10px;
     }
