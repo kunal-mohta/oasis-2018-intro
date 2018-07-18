@@ -110,4 +110,10 @@
     /* social media */
 
     /* days countdown */
+
+    #days-countdown{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+    }
 }
