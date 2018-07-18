@@ -35,10 +35,12 @@ var currentPage = pages.home;
 
 //navigation function
 function navigateToTab (pageName) {
-	currentPage.elem.style.display = "none";
+  currentPage.elem.style.display = "none";
+  currentPage.navElem.classList.remove("nav-selected");
 
-	pages[pageName].elem.style.display = "block";
-	currentPage = pages[pageName];
+  currentPage = pages[pageName];
+  currentPage.elem.style.display = "block";
+  currentPage.navElem.classList.add("nav-selected");
 }
 
 //binding onclick events
