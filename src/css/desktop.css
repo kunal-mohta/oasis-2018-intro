@@ -109,6 +109,19 @@
 
     /* social media */
 
+    #social-media{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        right: 300px;
+    }
+
+    .social-icon{
+        width: 30px;
+        margin: 0 12px 0 12px;
+        cursor: pointer;
+    }
+
     /* days countdown */
 
     #days-countdown{
