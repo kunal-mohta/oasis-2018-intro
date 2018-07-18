@@ -1,5 +1,14 @@
 /* common */
 
+/*fonts*/
+@font-face {
+    font-family: "ikaros";
+    src: url("../assets/fonts/Ikaros-Regular.otf");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
 html, body {
  position: relative;
     margin: 0;

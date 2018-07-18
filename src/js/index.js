@@ -2,4 +2,6 @@
 
 import "./tabNavigation";
 
+import "./home";
+
 import "../css";
