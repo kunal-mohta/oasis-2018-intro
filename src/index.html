@@ -45,13 +45,21 @@
 
                     <div id = "videos" class = "content-page">
                         <div class="videos-content">
-                            <div class="video-img"><div class="img-heading">Oasis'18 Teaser</div><img src="./assets/video_img/oasis.jpg" alt="Oasis'18 Teaser" class="img-thumbnail" /></div>
-                            <div class="video-img"><div class="img-heading">Oasis'17 Aftermovie</div><img src="./assets/video_img/oasis.jpg" alt="Oasis'17 Aftermovie" class="img-thumbnail" /></div>
-                            <div class="video-img"><div class="img-heading">Oasis'17 Teaser</div><img src="./assets/video_img/oasis.jpg" alt="Oasis'17 Teaser" class="img-thumbnail" /></div>
-                            <div class="video-img"><div class="img-heading">Oasis'16 Aftermovie</div><img src="./assets/video_img/oasis.jpg" alt="Oasis'16 Aftermovie" class="img-thumbnail" /></div>
+                            <div class="video-img"><div class="img-heading">Oasis'18 Teaser</div><div class="js-overlay-start" data-url="https://www.youtube.com/embed/oWDZY6y7ED8?rel=0&amp;showinfo=0&amp;autoplay=1"><img src="./assets/video_img/oasis.jpg" alt="Oasis'18 Teaser" class="img-thumbnail" /></div></div>
+
+                            <div class="video-img"><div class="img-heading">Oasis'17 Aftermovie</div><div class="js-overlay-start" data-url="https://www.youtube.com/embed/xDyabSZ-nxA?rel=0&amp;showinfo=0&amp;autoplay=1"><img src="./assets/video_img/oasis.jpg" alt="Oasis'17 Aftermovie" class="img-thumbnail" /></div></div>
+
+                            <div class="video-img"><div class="img-heading">Oasis'17 Teaser</div><div class="js-overlay-start" data-url="https://www.youtube.com/embed/FN71wnk58Hg?rel=0&amp;showinfo=0&amp;autoplay=1"><img src="./assets/video_img/oasis.jpg" alt="Oasis'17 Teaser" class="img-thumbnail" /></div></div>
+
+                            <div class="video-img"><div class="img-heading">Oasis'16 Aftermovie</div><div class="js-overlay-start" data-url="https://www.youtube.com/embed/rh7WkyNXNRE?rel=0&amp;showinfo=0&amp;autoplay=1"><img src="./assets/video_img/oasis.jpg" alt="Oasis'16 Aftermovie" class="img-thumbnail" /></div></div>
                         </div>
-                        <div id="myModal" class="modal">
-                            <div class="modal-content"></div>
+                        <!-- for overlaying videos -->
+                        <div class="overlay-video">
+                            <div class="videoWrapperExt">
+                                <div class="videoWrapper">
+                                    <iframe id="player" allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
