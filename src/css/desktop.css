@@ -85,12 +85,14 @@
         font-family: "ikaros"; /*change font here*/
         font-size: 5vw;
         padding: 10px;
+        color: #ffffff;
     }
 
     .home-content{
         font-family: 'Roboto', sans-serif; /*change font here*/
         font-size: 20px;
         padding: 10px;
+        color: #ffffff;
     }
 
     .home-teaser{
@@ -100,6 +102,7 @@
         margin: 50px 10px 0px 10px;
         padding: 5px;
         cursor: pointer;
+        color: #2D8ED8;
     }
 
     /*about*/
@@ -108,12 +111,14 @@
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
+        color: #2D8ED8;
     }
 
     .about-content{
         color: black; /*to be changes to white later*/
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
+        color: #ffffff;
     }
 
     .about-content p{
@@ -127,6 +132,7 @@
         margin: 50px 10px 0px 10px;
         padding: 5px;
         cursor: pointer;
+        color: #2D8ED8;
     }
 
     /* sub theme scroll */
@@ -162,5 +168,6 @@
         padding: 10px;
         font-size: 24px;
         font-family: "ikaros";
+        color: #ffffff;
     }
 }
