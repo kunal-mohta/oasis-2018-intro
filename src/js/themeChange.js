@@ -15,22 +15,13 @@ const themeChange = {
 
 	changes: [
 		{
-			name: 'test1',
-			trigger: function() {
-				console.log(this.name);	
-			}
-		},
-		{
-			name: 'test2',
-			trigger: function() {
-				console.log(this.name);	
-			}
-		},
-		{
+			colors: ["red", "green", "blue", "yellow", "black", "purple"],
+			elemClass: "nav-selected",
 			trigger: function(counter){
-				console.log(counter);	
+				const elem = document.getElementsByClassName(this.elemClass)[0];
+				elem.style.borderTop = `solid 5px ${this.colors[counter]}`;
 			}
-		}
+		}	
 	],
 	
 	//TimeLapse between 2 theme change
