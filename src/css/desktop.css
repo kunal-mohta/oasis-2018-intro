@@ -7,6 +7,14 @@
         border: solid 1px black; /* temporary */
     }
 
+    .main-container-background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: url('../assets/imgs/content-bg.png');
+        background-size: cover;
+    }
+
     /* navigation */
     #nav {
         height: 15%;
