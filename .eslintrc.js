@@ -28,13 +28,13 @@ module.exports = {
         "no-console": [
             "warn"
         ],
-        "globals": {
-            "module": false,
-            "node": false
-        },
-        "env": {
-            "browser": true,
-            "node": true
-        }
+    },
+    "globals": {
+        "module": false,
+        "node": false
+    },
+    "env": {
+        "browser": true,
+        "node": true
     }
 };
