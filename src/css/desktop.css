@@ -11,7 +11,7 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        background: url('../assets/imgs/content-bg.png');
+        /* background: url('../assets/imgs/content-bg.png'); */
         background-size: cover;
     }
 

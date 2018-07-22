@@ -37,3 +37,9 @@ const themeChange = {
 }
 
 themeChange.triggerChange();
+
+/* exporting themeChange object
+ * import in tabNavigation.js
+ * to keep track of the current theme color
+ */
+module.exports = themeChange;
