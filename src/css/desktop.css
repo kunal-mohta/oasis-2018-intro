@@ -12,6 +12,7 @@
         width: 100%;
         position: absolute;
         background: url('../assets/imgs/content-bg.png');
+        filter: hue-rotate(-101deg) saturate(61.5%);
         background-size: cover;
     }
 
@@ -53,8 +54,7 @@
     }
 
     #nav-list .nav-selected {
-      border-top: solid 5px red;
-      color: red;
+      border-top: solid 5px green;
       box-sizing: border-box;
     }
 
