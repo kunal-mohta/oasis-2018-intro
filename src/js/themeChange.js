@@ -1,6 +1,6 @@
 const themeChange = {
 	
-	totalThemes: 6, 
+	totalThemes: 3, 
 
 	currentThemeCounter: 0,
 
@@ -15,26 +15,35 @@ const themeChange = {
 
 	changes: [
 		{
-			colors: ["red", "green", "blue", "yellow", "black", "purple"],
+			colors: ["#32b849", "#d65804", "#87ceeb"], // rock, hippie, lgbt
 			elemClass: "nav-selected",
 			trigger: function(counter){
 				const elem = document.getElementsByClassName(this.elemClass)[0];
 				elem.style.borderTop = `solid 5px ${this.colors[counter]}`;
 			}
-		}	
+		},
+		{
+			hueRotate: ["259deg", "170deg", "306deg"], // rock, hippie, lgbt
+			saturate: ["61.5%", "100%", "100%"], // rock, hippie, lgbt
+			elemClass: "main-container-background",
+			trigger: function(counter){
+				const contentBg = document.getElementsByClassName(this.elemClass)[0];
+				contentBg.style.filter = "hue-rotate(" + this.hueRotate[counter] + ") saturate(" + this.saturate[counter] + ")";
+			}
+		}
 	],
-	
+
 	//TimeLapse between 2 theme change
 	timeLapse: 2000, //In millisecond
 
 	//Function to trigger the themeChange and also increment the theme counter
 	triggerChange: function(){
 		setInterval( () => {
-			this.incrementThemeCounter();	
+			this.incrementThemeCounter();
 			this.changes.forEach(change => change.trigger(this.currentThemeCounter));
 		}, this.timeLapse);
 	}
-}
+};
 
 themeChange.triggerChange();
 
