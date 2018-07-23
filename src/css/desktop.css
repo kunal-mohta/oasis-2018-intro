@@ -144,23 +144,57 @@
         align-content: stretch;
         flex-wrap: wrap;
         overflow-y: scroll;
-        color: #2D8ED8;
     }
 
     .video-img {
-        font-size: 132%;
+        font-size: 120%;
         width: 45%;
     }
 
     .img-heading {
         padding-bottom: 1%;
         font-family: "ikaros";
+        width: 100%;
     }
     
 
     .img-thumbnail {
-        width: 100%;
+        width: 20vw;
+        height: 14vw;
         cursor: pointer;
+        background-image: url(../assets/video_img/oasis.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-thumbnail > img {
+        transition: transform 0.3s linear;
+    }
+
+    .img-thumbnail:hover > img {
+        transform: scale(1.1);
+    }
+
+    .aftermovie17 {
+        background-image: url(../assets/video_img/oasis_17_aftermovie.jpg);
+    }
+
+    .teaser17 {
+        background-image: url(../assets/video_img/oasis_17_teaser.jpg);
+    }
+
+    .aftermovie16 {
+        background-image: url(../assets/video_img/oasis_16_aftermovie.jpg);
+    }
+
+    .youtube-thumbnail {
+        width: 20%;
+        z-index: 99;
     }
     
     .overlay-video {
@@ -176,7 +210,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background: rgba(0, 0, 0, .9);
+        background: rgba(0, 0, 0, .7);
         z-index: 999999;
     }
 
