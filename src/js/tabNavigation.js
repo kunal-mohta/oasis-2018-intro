@@ -35,20 +35,20 @@ var currentPage = pages.home;
 
 //navigation function
 function navigateToTab (pageName) {
-  currentPage.elem.style.display = "none";
-  currentPage.navElem.classList.remove("nav-selected");
-  currentPage.navElem.style.borderTop = "solid 5px rgba(0,0,0,0)";
+	currentPage.elem.style.display = "none";
+	currentPage.navElem.classList.remove("nav-selected");
+	currentPage.navElem.style.borderTop = "solid 5px rgba(0,0,0,0)";
 
-  /* importing themeChange object
-   * from themeChange.js
-   * to get the current theme color
-   */
-  let theme = require("./themeChange");
+	/* importing themeChange object
+	* from themeChange.js
+	* to get the current theme color
+	*/
+	let theme = require("./themeChange");
 
-  currentPage = pages[pageName];
-  currentPage.elem.style.display = "block";
-  currentPage.navElem.classList.add("nav-selected");
-  currentPage.navElem.style.borderTop = "solid 5px " + theme.changes[0].colors[theme.currentThemeCounter];
+	currentPage = pages[pageName];
+	currentPage.elem.style.display = "block";
+	currentPage.navElem.classList.add("nav-selected");
+	currentPage.navElem.style.borderTop = "solid 5px " + theme.changes[0].colors[theme.currentThemeCounter];
 }
 
 //binding onclick events
