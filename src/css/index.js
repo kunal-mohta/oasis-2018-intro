@@ -1,3 +1,3 @@
-import "./common.css";
-import "./desktop.css";
-import "./handheld.css";
+import "./common.scss";
+import "./desktop.scss";
+import "./handheld.scss";
