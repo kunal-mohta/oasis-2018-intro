@@ -42,17 +42,19 @@
 
     #nav-list li {
         height: 100%;
-        width: 10vw;
-        font-size: 2.5vh;
+        width: 8vw;
+        font-size: 2vh;
         display: flex;
         align-items: center;
         justify-content: center;
         border-top: solid 5px rgba(0,0,0,0);
         box-sizing: border-box;
+        color: #fff;
     }
 
     #nav-list .nav-selected {
       border-top: solid 5px red;
+      color: red;
       box-sizing: border-box;
     }
 
