@@ -35,12 +35,12 @@ var currentPage = pages.home;
 
 //navigation function
 function navigateToTab (pageName) {
-  currentPage.elem.style.display = "none";
-  currentPage.navElem.classList.remove("nav-selected");
+	currentPage.elem.style.display = "none";
+	currentPage.navElem.classList.remove("nav-selected");
 
-  currentPage = pages[pageName];
-  currentPage.elem.style.display = "block";
-  currentPage.navElem.classList.add("nav-selected");
+	currentPage = pages[pageName];
+	currentPage.elem.style.display = "block";
+	currentPage.navElem.classList.add("nav-selected");
 }
 
 //binding onclick events
