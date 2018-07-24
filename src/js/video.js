@@ -11,8 +11,6 @@ js_overlay_start[0].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-		console.log(player.getAttribute("src"));
-		console.log("hi");
 	}, 100);
 });
 
@@ -23,8 +21,6 @@ js_overlay_start[1].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-		console.log(player.getAttribute("src"));
-		console.log("hi");
 	}, 100);
 });
 
@@ -35,8 +31,6 @@ js_overlay_start[2].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-		console.log(player.getAttribute("src"));
-		console.log("hi");
 	}, 100);
 });
 
