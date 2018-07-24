@@ -7,3 +7,5 @@ import "./home";
 
 // CSS Imports
 import "../css";
+
+console.log("This should occur home only");

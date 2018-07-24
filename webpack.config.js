@@ -8,15 +8,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 config = {
 	//entry: path.resolve(__dirname, "src/js/index.js"), 
-	entry: path.resolve(__dirname, "src", "js", "index.js"),
+	entry: {
+		index: path.resolve(__dirname, "src", "js", "index.js"),
+		glitch: path.resolve(__dirname, "src", "glitch", "glitch.js"),
+	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "bundle.js",
+		filename: "[name]_bundle.js",
 	},
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: './dist',
-		//hot: true,
 	},
 	module: {
 		rules: [
@@ -34,8 +36,8 @@ config = {
 				test: /\.scss$/,
 				use: [
 					"style-loader", // creates style nodes from JS strings
-					"css-loader", // translates CSS into CommonJS
-					"sass-loader" // compiles Sass to CSS
+					"css-loader",   // translates CSS into CommonJS
+					"sass-loader"   // compiles Sass to CSS
 				]
 			},
 			{
@@ -65,8 +67,18 @@ config = {
 		//new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
-			inject: 'body'
-		})
+			inject: 'body',
+			chunks: ["index"],
+			excludeChunks: ["glitch"]
+		}),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, "src", "glitch", "glitch.html"),
+			inject: 'body',
+			filename: "glitch.html",
+			//chunks: [path.resolve("glitch/glitch")]
+			chunks: ["glitch"],
+			excludeChunks: ["index"]
+		}), 
 		//new UglifyJSPlugin(),
 		//new webpack.HotModuleReplacementPlugin(),
 	],
