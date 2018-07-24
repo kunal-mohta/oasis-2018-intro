@@ -5,7 +5,7 @@ import "./tabNavigation";
 import "./themeChange";
 import "./home";
 
-// CSS Imports
-import "../css";
+// SCSS Imports
+import "../scss";
 
 console.log("This should occur home only");
