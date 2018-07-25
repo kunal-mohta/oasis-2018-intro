@@ -1,7 +1,7 @@
 "use strict";
 var js_overlay_start = document.getElementsByClassName("js-overlay-start");
 var player = document.getElementById("player");
-var video_wrapper_ext = document.getElementsByClassName("videoWrapperExt")[0];
+var video_wrapper_ext = document.getElementsByClassName("video-wrapper-ext")[0];
 var overlay_video = document.getElementsByClassName("overlay-video")[0];
 
 js_overlay_start[0].addEventListener("click", function(e) {
@@ -41,8 +41,6 @@ js_overlay_start[3].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-		console.log(player.getAttribute("src"));
-		console.log("hi");
 	}, 100);
 });
 
