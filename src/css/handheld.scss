@@ -6,6 +6,11 @@
         border: solid 1px black; /* temporary */
 	}
 
+	.main-container-background {
+		background-position: -20% 0;
+		background-repeat: no-repeat;
+	}
+
 	$nav-height: 10%;
 	/* navigation */
 	#nav {
@@ -34,15 +39,44 @@
 		font-size: 150%;
 		z-index: 5;
 		color: white;
-		background: black;
 		display: none;
+		overflow-y: scroll;
+	  }
+
+	#mobile-nav-page-filter {
+		position: absolute;
+		top: -10%;
+		right: -10%;
+		height: 1vh;
+		width: 1vh;
+		border-radius: 100%;
+		background: rgba(0,0,0,0.32);
+		transform-origin: 50% 50%;
+		transition: transform 0.1s linear;
+	}
+
+	#mobile-nav-list {
+		position: absolute;
+		padding: 0;
+		top: 10%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: "ikaros";
+		list-style: none;
+	}
+
+	#mobile-nav-list li {
+		padding: 5% 0;
+		opacity: 0;
 	}
 
 	#close-icon {
 		position: absolute;
 		right: 0;
 		margin: 5%;
-		height: 8%;
+		height: 0.6 * $nav-height;
 	}
 
 	/* main body */

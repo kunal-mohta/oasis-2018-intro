@@ -1,4 +1,4 @@
-var pages = {
+let pages = {
 	home: {
 		name: "home",
 		elem: document.getElementById("home"),
@@ -37,10 +37,12 @@ var pages = {
 	}
 };
 
-var currentPage = pages.home,
+let currentPage = pages.home,
 	mobileNavIcon = document.getElementById("ham-icon"),
 	mobileCloseIcon = document.getElementById("close-icon"),
-	mobileNavPage = document.getElementById("mobile-nav-page");
+	mobileNavPage = document.getElementById("mobile-nav-page"),
+	mobileNavPageFilter = document.getElementById("mobile-nav-page-filter"),
+	mainBody = document.getElementById("main-body");
 
 //navigation function
 function navigateToTab (pageName) {
@@ -73,7 +75,7 @@ function mobileNavigateToTab (pageName) {
 for (const page in pages) {
 	//creating a closure
 	(function () {
-		var pageName = pages[page].name;
+		let pageName = pages[page].name;
 		pages[page].navElem.addEventListener("click", function () {
 			navigateToTab(pageName);
 		});
@@ -85,12 +87,52 @@ for (const page in pages) {
 
 // open mobile navigation
 function openMobileNav () {
-	mobileNavPage.style.display = "block";
+	// making things disappear
+	mainBody.style.opacity = "0";
+	mobileNavIcon.style.opacity = "0";
+
+	// adding transition to the appearance of nav list
+	let transitionDelay = 0.05,
+		transitionDuration = 0.05;
+	document.querySelectorAll("#mobile-nav-list li").forEach(
+		(navItem) => {
+			navItem.style.transition = `opacity ${transitionDuration}s ${transitionDelay}s linear`;
+
+			transitionDelay += 0.05;
+		}
+	);
+
+	// making things appear
+	mobileNavPage.style.display = "flex";
+	mobileNavPageFilter.style.transform = "scale(300)";
+
+	setTimeout(
+		() => {
+			document.querySelectorAll("#mobile-nav-list li").forEach(
+				(navItem) => {
+					navItem.style.opacity = "1";
+				}
+			);
+		},
+		200
+	);
 }
 
 // close mobile navigation
 function closeMobileNav () {
+	// making things disappear
 	mobileNavPage.style.display = "none";
+	mobileNavPageFilter.style.transform = "scale(1)";
+
+	document.querySelectorAll("#mobile-nav-list li").forEach(
+		(navItem) => {
+			navItem.style.opacity = "0";
+		}
+	);
+
+	// making things appear
+	mainBody.style.opacity = "1";
+	mobileNavIcon.style.opacity = "1";
 }
 
 mobileNavIcon.addEventListener("click", openMobileNav);

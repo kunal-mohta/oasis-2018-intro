@@ -7,15 +7,6 @@
         border: solid 1px black; /* temporary */
     }
 
-    .main-container-background {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        background: url('../assets/imgs/content-bg.png');
-        filter: hue-rotate(-101deg) saturate(61.5%);
-        background-size: cover;
-    }
-
     /* navigation */
     #nav {
         height: 15%;
@@ -26,7 +17,11 @@
         height: 100%;
         width: 10%;
         border: solid 1px black; /* temporary */
-    }
+	}
+	
+	#mobile-nav-page {
+		display: none;
+	}
 
     #nav-list {
         list-style: none;
@@ -50,8 +45,8 @@
     }
 
     #nav-list .nav-selected {
-      border-top: solid 5px green;
-      box-sizing: border-box;
+		border-top: solid 5px green;
+		box-sizing: border-box;
     }
 
     #nav-list li:hover {
@@ -59,8 +54,8 @@
     }
 
     #ham-icon {
-		display: none;
-	}
+      	display: none;
+    }
 
     /* main body */
     #main-body {
