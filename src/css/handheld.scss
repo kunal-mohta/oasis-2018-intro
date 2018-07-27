@@ -179,6 +179,39 @@
 		z-index: 3;
     }
 
+    /*videos*/
+    .videos-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FF0404;
+	}
+	.videos-content {
+		font-family: "ikaros", sans-serif;
+		font-size: 7.5vw;
+		margin-top: 2vh;
+		text-align: center;
+		font-weight: 10;
+	}
+	.img-heading {
+		margin-top: 6vh;
+		margin-bottom: 2vh;
+	}
+	/*contact us*/
+	.contact-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FF0404;
+	}
+
+	.contact-content {
+		text-align: center;
+		margin-top: 2vh;
+	}
+
 	/* sub theme scroll */
 
 	/* social media */
