@@ -1,22 +1,61 @@
 /* handhelds */
 @media all and ( max-width: 600px ) {
+	$nav-height: 10%;
+	$firstThemeColor: #32b849;
+
+
     .main-container {
         height: 100%;
         width: 100%;
-        border: solid 1px black; /* temporary */
+        border: solid 1px #000; /* temporary */
 	}
 
-	$nav-height: 10%;
+	.main-container::after {
+		/* properties relative to main-container */
+		content: "";
+		height: $nav-height;
+		width: 100%;
+		background: #000;
+		position: absolute;
+		bottom: 0;
+	}
+
+	.main-container::before {
+		/* properties relative to main-container */
+		content: "";
+		height: $nav-height;
+		width: 100%;
+		background: linear-gradient(to top, #000, rgba(0,0,0,0));
+		position: absolute;
+		bottom: $nav-height;
+		z-index: 2;
+	}
+
+	.main-container-background {
+		background-position: 65% 0;
+		background-repeat: no-repeat;
+		transform: rotateZ(180deg);
+	}
+
 	/* navigation */
 	#nav {
 		height: $nav-height;
 		width: 100%;
-		background: black;
-		border: solid 1px black; /* temporary */
-	}
+		background: #000;
+  	}
+  
+  	#nav::after {
+		/* properties relative to nav */
+		content: "";
+		height: 100%;
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		background: linear-gradient(to bottom, #000, rgba(0,0,0,0));
+  }
 
 	#ham-icon {
-		height: 60%;
+		height: 50%;
 		position: absolute;
 		right: 0;
 		margin: 5%;
@@ -34,15 +73,48 @@
 		font-size: 150%;
 		z-index: 5;
 		color: white;
-		background: black;
 		display: none;
+		overflow-y: scroll;
+	  }
+
+	#mobile-nav-page-filter {
+		position: absolute;
+		top: -10%;
+		right: -10%;
+		height: 1vh;
+		width: 1vh;
+		border-radius: 100%;
+		background: rgba(0,0,0,0.32);
+		transform-origin: 50% 50%;
+		transition: transform 0.1s linear;
+	}
+
+	#mobile-nav-list {
+		position: absolute;
+		padding: 0;
+		top: 10%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: "ikaros";
+		list-style: none;
+	}
+
+	#mobile-nav-list li {
+		padding: 5% 0;
+		opacity: 0;
+	}
+
+	.mobile-nav-selected {
+		color: $firstThemeColor;
 	}
 
 	#close-icon {
 		position: absolute;
 		right: 0;
 		margin: 5%;
-		height: 8%;
+		height: 0.5 * $nav-height;
 	}
 
 	/* main body */
@@ -51,7 +123,8 @@
 		top: $nav-height;
 		height: 75%;
 		width: 100%;
-		border: solid 1px black; /* temporary */
+		border: solid 1px #000; /* temporary */
+		color: white;
 	}
 
 	.content-page:not(#home) {
