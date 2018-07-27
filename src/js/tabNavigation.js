@@ -71,20 +71,20 @@ function navigateToTab (pageName) {
 // navigation function for mobile
 function mobileNavigateToTab (pageName) {
 	closeMobileNav();
-  currentPage.elem.style.display = "none";
-  currentPage.mobileNavElem.classList.remove("mobile-nav-selected");
-  currentPage.mobileNavElem.style.color = "#fff";
+	currentPage.elem.style.display = "none";
+	currentPage.mobileNavElem.classList.remove("mobile-nav-selected");
+	currentPage.mobileNavElem.style.color = "#fff";
 
-  /* importing themeChange object
+	/* importing themeChange object
 	 * from themeChange.js
 	 * to get the current theme color
 	 */
 	let theme = require("./themeChange");
 
 	currentPage = pages[pageName];
-  currentPage.elem.style.display = "block";
-  currentPage.mobileNavElem.classList.add("mobile-nav-selected");
-  currentPage.mobileNavElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
+	currentPage.elem.style.display = "block";
+	currentPage.mobileNavElem.classList.add("mobile-nav-selected");
+	currentPage.mobileNavElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
 }
 
 // open mobile navigation

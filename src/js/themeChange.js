@@ -16,14 +16,14 @@ const themeChange = {
 	changes: [
 		{
 			colors: ["#32b849", "#d65804", "#87ceeb"], // rock, hippie, lgbt
-      elemClass: "nav-selected",
-      elem2Class: "mobile-nav-selected",
+			elemClass: "nav-selected",
+			elem2Class: "mobile-nav-selected",
 			trigger: function(counter){
 				const elem = document.getElementsByClassName(this.elemClass)[0];
-        elem.style.borderTop = `solid 5px ${this.colors[counter]}`;
+				elem.style.borderTop = `solid 5px ${this.colors[counter]}`;
         
-        const elem2 = document.getElementsByClassName(this.elem2Class)[0];
-        elem2.style.color = `${this.colors[counter]}`;
+				const elem2 = document.getElementsByClassName(this.elem2Class)[0];
+				elem2.style.color = `${this.colors[counter]}`;
 			}
 		},
 		{
