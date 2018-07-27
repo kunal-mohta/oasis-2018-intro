@@ -56,11 +56,77 @@
 
 	.content-page:not(#home) {
         display: none;
+	}
+	
+	/* home */
+	.home-heading{
+		font-family: productSans;
+		font-size: 13vw;
+		text-align: center;
+		color: black;
+	}
+
+	.home-content{
+		display: none;
+	}
+
+	.home-teaser{
+		font-family: 'Roboto', sans-serif;
+		font-size: 5vw;
+		text-align: center;
+	}
+
+	/* about */
+	.about-heading{
+		font-family: "ikaros";
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.about-content{
+        color: black; /*to be changes to white later*/
+        font-size: 3.5vw;
+		font-family: 'Roboto', sans-serif;        
+    }
+
+    .about-content p{
+        margin: 5px 10px 10px 10px;
+    }
+
+    .about-download{
+        color: black; /*color to be changes according to theme*/
+        font-family: "productSans"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+		cursor: pointer;
+		text-align: center;
     }
 
 	/* sub theme scroll */
 
 	/* social media */
+	#social-media{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        right: 10px;
+    }
+
+    .social-icon{
+        width: 20px;
+        margin: 0 12px 0 12px;
+		cursor: pointer;
+		background: #000000;
+    }
 
 	/* days countdown */
+	#days-countdown{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        font-size: 20px;
+        font-family: "ikaros";
+        color: #000000;
+    }
 }
