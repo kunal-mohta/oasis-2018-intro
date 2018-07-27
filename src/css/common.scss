@@ -8,7 +8,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
-
 html, body {
 	  position: relative;
     margin: 0;
@@ -33,14 +32,14 @@ html, body {
 	top: 0;
 }
 
-// .main-container-background {
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   background: url('../assets/imgs/content-bg.png');
-//   filter: hue-rotate(-101deg) saturate(61.5%);
-//   background-size: cover;
-// }
+.main-container-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url('../assets/imgs/content-bg.png');
+  filter: hue-rotate(259deg) saturate(61.5%);
+  background-size: cover;
+}
 
 /* navigation */
 #nav {

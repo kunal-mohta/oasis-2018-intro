@@ -44,6 +44,8 @@ let currentPage = pages.home,
 	mobileNavPageFilter = document.getElementById("mobile-nav-page-filter"),
 	mainBody = document.getElementById("main-body");
 
+/* START NAVIGATION FOR DESKTOP */
+
 //navigation function
 function navigateToTab (pageName) {
 	currentPage.elem.style.display = "none";
@@ -51,38 +53,38 @@ function navigateToTab (pageName) {
 	currentPage.navElem.style.borderTop = "solid 5px rgba(0,0,0,0)";
 
 	/* importing themeChange object
-	* from themeChange.js
-	* to get the current theme color
-	*/
+	 * from themeChange.js
+	 * to get the current theme color
+	 */
 	let theme = require("./themeChange");
 
 	currentPage = pages[pageName];
 	currentPage.elem.style.display = "block";
 	currentPage.navElem.classList.add("nav-selected");
-	currentPage.navElem.style.borderTop = "solid 5px " + theme.changes[0].colors[theme.currentThemeCounter];
+	currentPage.navElem.style.borderTop = `solid 5px ${theme.changes[0].colors[theme.currentThemeCounter]}`;
 }
+
+/* END NAVIGATION FOR DESKTOP */
+
+/* START NAVIGATION FOR MOBILE */
 
 // navigation function for mobile
 function mobileNavigateToTab (pageName) {
 	closeMobileNav();
-	currentPage.elem.style.display = "none";
+  currentPage.elem.style.display = "none";
+  currentPage.mobileNavElem.classList.remove("mobile-nav-selected");
+  currentPage.mobileNavElem.style.color = "#fff";
+
+  /* importing themeChange object
+	 * from themeChange.js
+	 * to get the current theme color
+	 */
+	let theme = require("./themeChange");
 
 	currentPage = pages[pageName];
-	currentPage.elem.style.display = "block";
-}
-
-//binding onclick events
-for (const page in pages) {
-	//creating a closure
-	(function () {
-		let pageName = pages[page].name;
-		pages[page].navElem.addEventListener("click", function () {
-			navigateToTab(pageName);
-		});
-		pages[page].mobileNavElem.addEventListener("click", function () {
-			mobileNavigateToTab(pageName);
-		});
-	})();
+  currentPage.elem.style.display = "block";
+  currentPage.mobileNavElem.classList.add("mobile-nav-selected");
+  currentPage.mobileNavElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
 }
 
 // open mobile navigation
@@ -135,5 +137,20 @@ function closeMobileNav () {
 	mobileNavIcon.style.opacity = "1";
 }
 
+/* END NAVIGATION FOR MOBILE */
+
+//binding onclick events
+for (const page in pages) {
+	//creating a closure
+	(function () {
+		let pageName = pages[page].name;
+		pages[page].navElem.addEventListener("click", function () {
+			navigateToTab(pageName);
+		});
+		pages[page].mobileNavElem.addEventListener("click", function () {
+			mobileNavigateToTab(pageName);
+		});
+	})();
+}
 mobileNavIcon.addEventListener("click", openMobileNav);
 mobileCloseIcon.addEventListener("click", closeMobileNav);

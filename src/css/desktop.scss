@@ -1,5 +1,7 @@
 /* desktop */
 @media all and ( min-width: 600px ) {
+    $firstThemeColor: #32b849;
+
     .main-container {
         width: 90vw;
         height: 80vh;
@@ -45,7 +47,7 @@
     }
 
     #nav-list .nav-selected {
-		border-top: solid 5px green;
+		border-top: solid 5px $firstThemeColor;
 		box-sizing: border-box;
     }
 
