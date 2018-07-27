@@ -187,14 +187,17 @@
 		text-transform: uppercase;
 		color: #FF0404;
 	}
-	.videos-content {
+	.videos-content, .overlay-video {
+		display: none;
+	}
+	.videos-content-mob {
 		font-family: "ikaros", sans-serif;
 		font-size: 7.5vw;
 		margin-top: 2vh;
 		text-align: center;
 		font-weight: 10;
 	}
-	.img-heading {
+	.img-heading-mob {
 		margin-top: 6vh;
 		margin-bottom: 2vh;
 	}
@@ -208,6 +211,7 @@
 	}
 
 	.contact-content {
+		font-family: "Roboto", sans-serif;
 		text-align: center;
 		margin-top: 2vh;
 	}
