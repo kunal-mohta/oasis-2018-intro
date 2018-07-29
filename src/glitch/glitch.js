@@ -4,6 +4,9 @@ import "./glitch.scss";
 const Promise = require("es6-promise").Promise;
 
 function init() {
+	// Edit this to change tjhe transition duration (in seconds)
+	const TRANSITION_DURATION = 5;
+
 	let PSEUDO_COUNT = 0;
 	const ANIMATION_DURATOIN = 3;
 
@@ -92,12 +95,13 @@ function init() {
 
 			let currentIndex = 0;
 
-			setInterval(next, 5000);
+			setInterval(next, TRANSITION_DURATION*1000);
 
 			// function to go to next image - defined inside startAnim to access currentIndex
 			function next() {
-				// animateOut(currentIndex, ANIMATION_DURATOIN);
 				console.log("running next");
+				
+				animateOut(currentIndex, ANIMATION_DURATOIN);
 
 				let nextIndex = (++currentIndex) % (IMAGES.length);
 				animateIn(nextIndex, ANIMATION_DURATOIN);
@@ -174,14 +178,70 @@ function init() {
 			
 			let div = document.getElementById("img" + index);
 			
-			// flicker in if not first image
+			// flicker in
 			div.classList.add("imageFlickerIn");
+			setTimeout(function() {
+				div.style.opacity = 1;
+				div.classList.remove("imageFlickerIn");
+			}, 3000);
+
+			// glitch
+			div.pseudoStyle("before", "animation", "noise-anim " + duration + "s linear alternate-reverse");
+			let beforePseudoCount = PSEUDO_COUNT;
+			console.log(beforePseudoCount);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount)}, duration*1000);			
+
+			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
+			let afterPseudoCount = PSEUDO_COUNT;
+			console.log(afterPseudoCount);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount)}, duration*1000);
+		}
+
+		function animateOut (index, duration) {
+			console.log("running animateOut");
+			let UID = {
+				getNew: function () {
+					PSEUDO_COUNT++;
+					return PSEUDO_COUNT;
+				}
+			};
+
+			HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
+				let _this = this;
+				let _sheetId = "pseudoStyles";
+				let _head = document.head || document.getElementsByTagName('head')[0];
+				let _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				_sheet.id = _sheetId;
+				let className = "pseudoStyle" + UID.getNew();
+
+				_this.className += " " + className;
+
+				_sheet.innerHTML += "\n." + className + ":" + element + "{" + prop + ":" + value + "}";
+				_head.appendChild(_sheet);
+				return this;
+			};
+
+			let div = document.getElementById("img" + index);
+
+			// flicker out
+			div.classList.add("imageFlickerOut");
+			setTimeout(function() {
+				div.style.opacity = 0;
+				div.classList.remove("imageFlickerOut")
+			}, 1500);
 			
 			// glitch
 			div.pseudoStyle("before", "animation", "noise-anim " + duration + "s linear alternate-reverse");
-			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
-		}
+			let beforePseudoCount = PSEUDO_COUNT;
+			console.log(beforePseudoCount);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount)}, duration*1000);		
 
+			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
+			let afterPseudoCount = PSEUDO_COUNT;
+			console.log(afterPseudoCount);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount)}, duration*1000);
+
+		}
 	});
 
 

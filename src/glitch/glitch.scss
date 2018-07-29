@@ -52,13 +52,12 @@ html, body {
 }
 .imageFlickerIn {
 	opacity: 0;
-	animation: flicker-in 1s forwards;
-  	// animation-delay: 3s;
+	animation: flicker-in 1.5s forwards;
+  	animation-delay: 1.5s;
 }
 .imageFlickerOut {
 	opacity: 1;
-	animation: flicker-out 1s forwards;
-  	animation-delay: 2s;
+	animation: flicker-out 1.5s forwards;
 }
 @keyframes noise-anim{
 	$steps:20;
