@@ -295,6 +295,23 @@
       position: absolute;
       right: 0;
       top: 0;
+
+	  #theme-scroll-innerwrap {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+
+		.theme-number {
+			color: white;		
+			font-size: 14px;
+			font-family: ikaros;
+			opacity: 0.47;
+		}
+		
+	  }
     }
 
     /* social media */

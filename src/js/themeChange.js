@@ -9,9 +9,8 @@ const themeChange = {
 	},
 
 	//Changes -> Array of changes to be implemented on the next theme change
-	//Each change should have a trigger function which is to be actually called
+	//Each change SHOULD have a trigger function which is to be actually called
 	//on the theme change
-	//The parameter passed to each trigger function is the currentThemeCounter
 
 	changes: [
 		{
@@ -30,12 +29,33 @@ const themeChange = {
 				const contentBg = document.getElementsByClassName(this.elemClass)[0];
 				contentBg.style.filter = "hue-rotate(" + this.hueRotate[counter] + ") saturate(" + this.saturate[counter] + ")";
 			}
+		},
+		{
+			setup: function(){
+				console.log(this);
+				const themeScrollIW = document.getElementById("theme-scroll-innerwrap");
+				for(let i = 0; i < this.totalThemes; ++i){
+					const div = document.createElement("div");
+					const textNode = document.createTextNode(
+					`${i < 9 ? "0" :  ""}${i+1}`);
+					div.className = "theme-number";
+					div.appendChild(textNode);
+					themeScrollIW.appendChild(div);
+				}
+				const themeNumbers = document.getElementsByClassName("theme-number");	
+				themeNumbers[0].style.opacity = "1";
+			},
+			trigger: function(counter){
+				const themeNumbers = document.getElementsByClassName("theme-number");	
+				Array.from(themeNumbers).forEach(elem => elem.style.opacity = "");
+				themeNumbers[counter].style.opacity = "1";
+			}
 		}
 	],
 
 	//TimeLapse between 2 theme change
 	timeLapse: 2000, //In millisecond
-
+	
 	//Function to trigger the themeChange and also increment the theme counter
 	triggerChange: function(){
 		setInterval( () => {
@@ -46,6 +66,8 @@ const themeChange = {
 };
 
 themeChange.triggerChange();
+/*PLEASE CHANGE THE INDEX ACCORDINGLY TO KEEP TRACK*/
+themeChange.changes[2].setup.apply(themeChange)
 
 /* exporting themeChange object
  * import in tabNavigation.js
