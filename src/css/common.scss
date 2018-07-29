@@ -16,6 +16,10 @@ html, body {
     width: 100vw;
 }
 
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
 .main-wrapper {
     position: absolute;
     height: 100vh;
