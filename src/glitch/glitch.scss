@@ -39,7 +39,6 @@ html, body {
 	top:0;
 	overflow:hidden;
 	clip:rect(0,900px,0,0);
-	// animation: noise-anim 5s linear alternate-reverse;
 	-webkit-filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)deg);
 	filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)+deg);
 }
@@ -48,9 +47,18 @@ html, body {
 	left:-8px;
 	overflow:hidden;
 	clip:rect(0,900px,0,0);
-	// animation: noise-anim 5s linear alternate-reverse;
 	-webkit-filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
 	filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
+}
+.imageFlickerIn {
+	opacity: 0;
+	animation: flicker-in 1s forwards;
+  	// animation-delay: 3s;
+}
+.imageFlickerOut {
+	opacity: 1;
+	animation: flicker-out 1s forwards;
+  	animation-delay: 2s;
 }
 @keyframes noise-anim{
 	$steps:20;
@@ -58,5 +66,41 @@ html, body {
 		#{percentage($i*(1/$steps))}{
 			clip:rect(random(500)+px,9999px,random(500)+px,0);
 		}
+	}
+}
+@keyframes flicker-in{
+	$steps:10;
+	$temp: false;
+	@for $i from 0 through floor(3/4 * $steps) {
+		#{percentage($i*(1/$steps))}{
+		@if($temp == true) {
+			opacity: random(50)/100;
+			$temp: false;
+		} @else {
+			opacity: random(50)/200 + 0.75;
+			$temp: true;
+		}
+		}
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flicker-out {
+	$steps:10;
+	$temp: true;
+	@for $i from 0 through floor(3/4 * $steps) {
+	  #{percentage($i*(1/$steps))}{
+		@if($temp == true) {
+		  opacity: random(50)/100;
+		  $temp: false;
+		} @else {
+		  opacity: random(50)/200 + 0.75;
+		  $temp: true;
+		}
+	  }
+	}
+	100% {
+	  opacity: 0;
 	}
 }

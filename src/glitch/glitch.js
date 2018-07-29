@@ -4,6 +4,9 @@ import "./glitch.scss";
 const Promise = require("es6-promise").Promise;
 
 function init() {
+	let PSEUDO_COUNT = 0;
+	const ANIMATION_DURATOIN = 3;
+
 	const IMAGES = [
 		{
 			name: "1.png",
@@ -88,22 +91,16 @@ function init() {
 			})
 
 			let currentIndex = 0;
-			next();
+
+			setInterval(next, 5000);
 
 			// function to go to next image - defined inside startAnim to access currentIndex
 			function next() {
-				let currDimensions = getDimensions(currentIndex);
-				console.log(currDimensions);
-
-				// flickerOut(currentIndex);
+				// animateOut(currentIndex, ANIMATION_DURATOIN);
+				console.log("running next");
 
 				let nextIndex = (++currentIndex) % (IMAGES.length);
-
-				let nextDimensions = getDimensions(nextIndex);
-				console.log(nextDimensions);
-
-				// flickerIn(currentIndex);
-				// glitch(currentIndex);
+				animateIn(nextIndex, ANIMATION_DURATOIN);
 
 				currentIndex = nextIndex;
 			}
@@ -117,10 +114,9 @@ function init() {
 
 		function setURL(index, dimensions) {
 			let UID = {
-				_current: 0,
 				getNew: function () {
-					this._current++;
-					return this._current;
+					PSEUDO_COUNT++;
+					return PSEUDO_COUNT;
 				}
 			};
 
@@ -150,6 +146,40 @@ function init() {
 			div.pseudoStyle("after", "height", dimensions.height + "px");
 			div.pseudoStyle("after", "width", dimensions.width + "px");
 			div.pseudoStyle("after", "background-size", dimensions.width + "px " + dimensions.height + "px");
+		}
+
+		function animateIn (index, duration) {
+			console.log("running animateIn");
+			let UID = {
+				getNew: function () {
+					PSEUDO_COUNT++;
+					return PSEUDO_COUNT;
+				}
+			};
+
+			HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
+				let _this = this;
+				let _sheetId = "pseudoStyles";
+				let _head = document.head || document.getElementsByTagName('head')[0];
+				let _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				_sheet.id = _sheetId;
+				let className = "pseudoStyle" + UID.getNew();
+
+				_this.className += " " + className;
+
+				_sheet.innerHTML += "\n." + className + ":" + element + "{" + prop + ":" + value + "}";
+				_head.appendChild(_sheet);
+				return this;
+			};
+			
+			let div = document.getElementById("img" + index);
+			
+			// flicker in if not first image
+			div.classList.add("imageFlickerIn");
+			
+			// glitch
+			div.pseudoStyle("before", "animation", "noise-anim " + duration + "s linear alternate-reverse");
+			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
 		}
 
 	});
