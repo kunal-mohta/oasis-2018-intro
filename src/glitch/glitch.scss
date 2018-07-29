@@ -30,5 +30,33 @@ html, body {
 
 	img {
 		max-height: 50vh;
+		margin: 0 auto;
+	}
+}
+.image::after{
+	position:absolute;
+	left:8px;
+	top:0;
+	overflow:hidden;
+	clip:rect(0,900px,0,0);
+	// animation: noise-anim 5s linear alternate-reverse;
+	-webkit-filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)deg);
+	filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)+deg);
+}
+.image::before{
+	position:absolute;
+	left:-8px;
+	overflow:hidden;
+	clip:rect(0,900px,0,0);
+	// animation: noise-anim 5s linear alternate-reverse;
+	-webkit-filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
+	filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
+}
+@keyframes noise-anim{
+	$steps:20;
+	@for $i from 0 through $steps{
+		#{percentage($i*(1/$steps))}{
+			clip:rect(random(500)+px,9999px,random(500)+px,0);
+		}
 	}
 }
