@@ -34,7 +34,7 @@ const themeChange = {
 	],
 
 	//TimeLapse between 2 theme change
-	timeLapse: 2000, //In millisecond
+	timeLapse: 5000, //In millisecond
 
 	//Function to trigger the themeChange and also increment the theme counter
 	triggerChange: function(){

@@ -4,6 +4,7 @@
 import "./tabNavigation";
 import "./themeChange";
 import "./home";
+import "./glitch";
 
 // SCSS Imports
 import "../scss";

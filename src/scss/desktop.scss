@@ -69,6 +69,7 @@
         position: absolute;
         top: 15%;
         border: solid 1px black; /* temporary */
+        z-index: 999;
     }
 
     .content-page {
