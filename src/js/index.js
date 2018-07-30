@@ -6,7 +6,7 @@ import "./themeChange";
 import "./home";
 import "./glitch";
 
-// SCSS Imports
-import "../scss";
+// CSS Imports
+import "../css";
 
-console.log("This should occur home only");
+import "./video";

@@ -67,8 +67,6 @@ function init() {
 			}
 
 			CONTAINER.appendChild(div);
-
-			console.log("Image container " + index + " created!");
 		}
 		resolve();
 	});
@@ -78,7 +76,6 @@ function init() {
 			// check if the image divs have been mounted to the document
 			if (document.readyState === "complete") {
 				clearInterval(checkState);
-				console.log("Starting anim!");
 				// start animation/transition
 				startAnim();
 			}
@@ -90,7 +87,7 @@ function init() {
 			IMAGES.map((obj, index) => {
 				let dimensions = getDimensions(index);
 				setURL(index, dimensions);
-			})
+			});
 
 			let currentIndex = 0;
 
@@ -98,8 +95,6 @@ function init() {
 
 			// function to go to next image - defined inside startAnim to access currentIndex
 			function next() {
-				console.log("running next");
-				
 				animateOut(currentIndex, ANIMATION_DURATOIN);
 
 				let nextIndex = (++currentIndex) % (IMAGES.length);
@@ -126,8 +121,8 @@ function init() {
 			HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
 				let _this = this;
 				let _sheetId = "pseudoStyles";
-				let _head = document.head || document.getElementsByTagName('head')[0];
-				let _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				let _head = document.head || document.getElementsByTagName("head")[0];
+				let _sheet = document.getElementById(_sheetId) || document.createElement("style");
 				_sheet.id = _sheetId;
 				let className = "pseudoStyle" + UID.getNew();
 
@@ -152,7 +147,6 @@ function init() {
 		}
 
 		function animateIn (index, duration) {
-			console.log("running animateIn");
 			let UID = {
 				getNew: function () {
 					PSEUDO_COUNT++;
@@ -163,8 +157,8 @@ function init() {
 			HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
 				let _this = this;
 				let _sheetId = "pseudoStyles";
-				let _head = document.head || document.getElementsByTagName('head')[0];
-				let _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				let _head = document.head || document.getElementsByTagName("head")[0];
+				let _sheet = document.getElementById(_sheetId) || document.createElement("style");
 				_sheet.id = _sheetId;
 				let className = "pseudoStyle" + UID.getNew();
 
@@ -187,17 +181,14 @@ function init() {
 			// glitch
 			div.pseudoStyle("before", "animation", "noise-anim " + duration + "s linear alternate-reverse");
 			let beforePseudoCount = PSEUDO_COUNT;
-			console.log(beforePseudoCount);
-			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount)}, duration*1000);			
+			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount);}, duration*1000);			
 
 			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
 			let afterPseudoCount = PSEUDO_COUNT;
-			console.log(afterPseudoCount);
-			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount)}, duration*1000);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount);}, duration*1000);
 		}
 
 		function animateOut (index, duration) {
-			console.log("running animateOut");
 			let UID = {
 				getNew: function () {
 					PSEUDO_COUNT++;
@@ -208,8 +199,8 @@ function init() {
 			HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
 				let _this = this;
 				let _sheetId = "pseudoStyles";
-				let _head = document.head || document.getElementsByTagName('head')[0];
-				let _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				let _head = document.head || document.getElementsByTagName("head")[0];
+				let _sheet = document.getElementById(_sheetId) || document.createElement("style");
 				_sheet.id = _sheetId;
 				let className = "pseudoStyle" + UID.getNew();
 
@@ -226,19 +217,17 @@ function init() {
 			div.classList.add("imageFlickerOut");
 			setTimeout(function() {
 				div.style.opacity = 0;
-				div.classList.remove("imageFlickerOut")
+				div.classList.remove("imageFlickerOut");
 			}, 1500);
 			
 			// glitch
 			div.pseudoStyle("before", "animation", "noise-anim " + duration + "s linear alternate-reverse");
 			let beforePseudoCount = PSEUDO_COUNT;
-			console.log(beforePseudoCount);
-			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount)}, duration*1000);		
+			setTimeout(function() {div.classList.remove("pseudoStyle" + beforePseudoCount);}, duration*1000);		
 
 			div.pseudoStyle("after", "animation", "noise-anim " + duration + "s linear alternate-reverse");
 			let afterPseudoCount = PSEUDO_COUNT;
-			console.log(afterPseudoCount);
-			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount)}, duration*1000);
+			setTimeout(function() {div.classList.remove("pseudoStyle" + afterPseudoCount);}, duration*1000);
 
 		}
 	});
