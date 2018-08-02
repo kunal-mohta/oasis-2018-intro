@@ -179,6 +179,55 @@
 		z-index: 3;
     }
 
+    /*videos*/
+    .videos-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FF0404;
+	}
+	.videos-content, .overlay-video {
+		display: none;
+	}
+	.videos-content-mob {
+		font-family: "ikaros", sans-serif;
+		font-size: 7.5vw;
+		margin-top: 2vh;
+		text-align: center;
+		font-weight: 10;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.img-heading-mob {
+		margin-top: 6vh;
+		margin-bottom: 2vh;
+	}
+	.youtube-video {
+		height: 25vh;
+		width: 70vw;
+	}
+	.youtube-video iframe {
+		width: 100%;
+		height: 100%;
+	}
+	/*contact us*/
+	.contact-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FF0404;
+	}
+
+	.contact-content {
+		font-family: "Roboto", sans-serif;
+		text-align: center;
+		margin-top: 2vh;
+	}
+
 	/* sub theme scroll */
 
 	/* social media */

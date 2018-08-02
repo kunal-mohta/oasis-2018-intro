@@ -128,6 +128,10 @@
     }
 
     /*videos*/
+    .videos-content-mob, .videos-heading {
+        display: none;
+    }
+    
     .videos-content {
         height: 100%;
         width: 100%;
