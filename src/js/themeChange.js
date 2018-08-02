@@ -1,6 +1,6 @@
 const themeChange = {
 	
-	totalThemes: 3, 
+	totalThemes: 5, 
 
 	currentThemeCounter: 0,
 
@@ -23,8 +23,8 @@ const themeChange = {
 			}
 		},
 		{
-			hueRotate: ["259deg", "170deg", "306deg"], // rock, hippie, lgbt
-			saturate: ["61.5%", "100%", "100%"], // rock, hippie, lgbt
+			hueRotate: ["259deg", "170deg", "306deg", "0deg", "300deg"], // rock, hippie, lgbt
+			saturate: ["61.5%", "100%", "100%", "100%", "100%"], // rock, hippie, lgbt
 			elemClass: "main-container-background",
 			trigger: function(counter){
 				const contentBg = document.getElementsByClassName(this.elemClass)[0];
@@ -34,7 +34,7 @@ const themeChange = {
 	],
 
 	//TimeLapse between 2 theme change
-	timeLapse: 5000, //In millisecond
+	timeLapse: 2000, //In millisecond
 
 	//Function to trigger the themeChange and also increment the theme counter
 	triggerChange: function(){

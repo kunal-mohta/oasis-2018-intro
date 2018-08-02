@@ -25,6 +25,14 @@ html, body {
     justify-content: center;
 }
 
+#theme-wrapper {
+    z-index: 1;
+}
+
+#content-wrapper {
+    z-index: 2;
+}
+
 /* navigation */
 
 /* main body */
