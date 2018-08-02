@@ -7,3 +7,5 @@ import "./home";
 
 // CSS Imports
 import "../css";
+
+import "./video";
