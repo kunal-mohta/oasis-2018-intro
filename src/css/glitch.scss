@@ -1,0 +1,114 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+}
+
+#image-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 75%;
+    width: 48%;
+    position: absolute;
+    bottom: 0%;
+	right: 12%;
+	z-index: 10;
+}
+
+.image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+
+	h1 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: #fff;
+	}
+
+	img {
+		max-height: 70vh;
+		max-width: 80vw;
+		margin: 0 auto;
+	}
+}
+.image::after{
+	position:absolute;
+	left:8px;
+	top:0;
+	overflow:hidden;
+	clip:rect(0,900px,0,0);
+	max-height: 70vh;
+	max-width: 80vw;
+	-webkit-filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)deg);
+	filter: drop-shadow(-1px -1px 5px rgba(0,255,0,0.2)) hue-rotate(random(360)+deg);
+}
+.image::before{
+	position:absolute;
+	left:-8px;
+	overflow:hidden;
+	clip:rect(0,900px,0,0);
+	max-height: 70vh;
+	max-width: 80vw;
+	-webkit-filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
+	filter: drop-shadow(1px 1px 5px rgba(255,0,0,0.2)) hue-rotate(random(360)+deg);
+}
+.imageFlickerIn {
+	opacity: 0;
+	animation: flicker-in 1.5s forwards;
+  	animation-delay: 1.5s;
+}
+.imageFlickerOut {
+	opacity: 1;
+	animation: flicker-out 1.5s forwards;
+}
+@keyframes noise-anim{
+	$steps:20;
+	@for $i from 0 through $steps{
+		#{percentage($i*(1/$steps))}{
+			clip:rect(random(500)+px,9999px,random(500)+px,0);
+		}
+	}
+}
+@keyframes flicker-in{
+	$steps:10;
+	$temp: false;
+	@for $i from 0 through floor(3/4 * $steps) {
+		#{percentage($i*(1/$steps))}{
+		@if($temp == true) {
+			opacity: random(50)/100;
+			$temp: false;
+		} @else {
+			opacity: random(50)/200 + 0.75;
+			$temp: true;
+		}
+		}
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flicker-out {
+	$steps:10;
+	$temp: true;
+	@for $i from 0 through floor(3/4 * $steps) {
+	  #{percentage($i*(1/$steps))}{
+		@if($temp == true) {
+		  opacity: random(50)/100;
+		  $temp: false;
+		} @else {
+		  opacity: random(50)/200 + 0.75;
+		  $temp: true;
+		}
+	  }
+	}
+	100% {
+	  opacity: 0;
+	}
+}

@@ -46,6 +46,14 @@ html, body {
   background-size: cover;
 }
 
+#theme-wrapper {
+    z-index: 1;
+}
+
+#content-wrapper {
+    z-index: 2;
+}
+
 /* navigation */
 #nav {
 	position: absolute;

@@ -5,6 +5,7 @@ import "./tabNavigation";
 import "./themeChange";
 import "./home";
 import "./video";
+import "./glitch";
 
 // CSS Imports
 import "../css";
