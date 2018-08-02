@@ -196,10 +196,22 @@
 		margin-top: 2vh;
 		text-align: center;
 		font-weight: 10;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.img-heading-mob {
 		margin-top: 6vh;
 		margin-bottom: 2vh;
+	}
+	.youtube-video {
+		height: 25vh;
+		width: 70vw;
+	}
+	.youtube-video iframe {
+		width: 100%;
+		height: 100%;
 	}
 	/*contact us*/
 	.contact-heading{
