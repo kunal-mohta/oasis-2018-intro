@@ -13,8 +13,8 @@ window.onload = function () {
 	oasisSlogan.classList.add("slogan-fade-in");
 	loaderWrapper.classList.add("wrapper-fade-out");
 	mainLoader.classList.add("loader-transition");
-	oasisText.classList.add("wrapper-fade-out");
-	oasisDate.classList.add("wrapper-fade-out");
+	oasisText.classList.add("text-fade-out");
+	oasisDate.classList.add("text-fade-out");
 	setTimeout(function() {loaderWrapper.style.display = "none";}, 3500);
 };
 
