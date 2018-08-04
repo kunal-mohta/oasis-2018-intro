@@ -15,7 +15,8 @@ const themeChange = {
 
 	changes: [
 		{
-			colors: ["#32b849", "#d65804", "#87ceeb", "#df1414"], // rock, hippie, lgbt
+			//colors: ["#32b849", "#d65804", "#87ceeb", "#df1414"], // rock, hippie, lgbt, punk
+			colors: ["#df1414", "#d65804", "#32b849", "#87ceeb" ],
 			// elems
 			elemClass: "nav-selected",
 			elem2Class: "mobile-nav-selected",
@@ -44,16 +45,22 @@ const themeChange = {
 			}
 		},
 		{
-			hueRotate: ["259deg", "170deg", "306deg", "120deg"], // rock, hippie, lgbt, punk
-			saturate: ["61.5%", "100%", "100%", "100%"], // rock, hippie, lgbt, punk
+			//hueRotate: ["259deg", "170deg", "306deg", "120deg"], // rock, hippie, lgbt, punk
+			hueRotate: [120, 170, 259, 306], // punk, hippie, rock, lgbt
+			//saturate: ["61.5%", "100%", "100%", "100%"], // rock, hippie, lgbt, punk
+			saturate: [100, 100, 61.5, 100], // rock, hippie, lgbt, punk
 			elemClass: "main-container-background",
 			elem2Class: "main-wrapper-background",
+			cycleCounter: 0,
 			trigger: function(counter){
+				if(!counter) ++this.cycleCounter;
+				const hueRotateVal = this.cycleCounter * 360 + this.hueRotate[counter];
+
 				const contentBg = document.getElementsByClassName(this.elemClass)[0];
-				contentBg.style.filter = "hue-rotate(" + this.hueRotate[counter] + ") saturate(" + this.saturate[counter] + ")";
+				contentBg.style.filter = `hue-rotate(${hueRotateVal}deg)`;
 
 				const mainBg = document.getElementsByClassName(this.elem2Class)[0];
-				mainBg.style.filter = "hue-rotate(" + this.hueRotate[counter] + ") saturate(" + this.saturate[counter] + ")";
+				mainBg.style.filter = `hue-rotate(${hueRotateVal}deg)`;
 			}
 		}
 	],

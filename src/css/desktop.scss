@@ -24,6 +24,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             filter: hue-rotate(259deg) saturate(61.5%);
+  			transition: 1s all;
         }
     }
 
@@ -61,6 +62,7 @@
         border-top: solid 5px rgba(0,0,0,0);
         box-sizing: border-box;
         color: #fff;
+        transition: border-color 0.5s linear, color 0.5s linear;
     }
 
     #nav-list .nav-selected {
@@ -299,6 +301,7 @@
       position: absolute;
       right: 0;
       top: 0;
+      transition: border-color 0.5s linear;
     }
 
     /* social media */
