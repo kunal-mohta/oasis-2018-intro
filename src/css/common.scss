@@ -61,6 +61,7 @@ html, body {
 
 .theme-color-text {
     color: $firstThemeColor;
+    transition: color 0.5s linear;
 }
 
 /* navigation */
