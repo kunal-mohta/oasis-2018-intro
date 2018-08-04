@@ -6,8 +6,25 @@
         width: 90vw;
         height: 80vh;
         position: relative;
-        border: solid 1px black; /* temporary */
         overflow-x: hidden;
+    }
+
+    #theme-wrapper {
+        .main-container {
+            box-shadow: 20px 20px 40px black;
+        }
+
+        .main-wrapper-background {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: url('../assets/imgs/content-bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: hue-rotate(259deg) saturate(61.5%);
+        }
     }
 
     /* navigation */
@@ -19,7 +36,6 @@
     #logo {
         height: 100%;
         width: 10%;
-        border: solid 1px black; /* temporary */
 	}
 	
 	#mobile-nav-page {
@@ -49,7 +65,8 @@
 
     #nav-list .nav-selected {
 		border-top: solid 5px $firstThemeColor;
-		box-sizing: border-box;
+        box-sizing: border-box;
+        color: $firstThemeColor;
     }
 
     #nav-list li:hover {
@@ -66,7 +83,6 @@
         width: 48%;
         position: absolute;
         top: 15%;
-        border: solid 1px black; /* temporary */
         z-index: 999;
     }
 
@@ -90,22 +106,18 @@
     }
 
     .home-teaser{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 27px;
         margin: 50px 10px 0px 10px;
         padding: 5px;
         cursor: pointer;
-        color: #2D8ED8;
     }
 
     /*about*/
     .about-heading{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
-        color: #2D8ED8;
     }
 
     .about-content{
@@ -120,13 +132,11 @@
     }
 
     .about-download{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 27px;
         margin: 50px 10px 0px 10px;
         padding: 5px;
         cursor: pointer;
-        color: #2D8ED8;
     }
 
     /*videos*/
@@ -159,7 +169,6 @@
         padding-bottom: 1%;
         font-family: "ikaros";
         width: 100%;
-        color: #2D8ED8;
     }
 
 
@@ -259,7 +268,6 @@
     }
 
     .contact-heading{
-        color: #F0DF00; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
@@ -287,7 +295,7 @@
     #theme-scroll {
       height: 100%;
       width: 10%;
-      border-left: solid red 5px;
+      border-left: solid $firstThemeColor 5px;
       position: absolute;
       right: 0;
       top: 0;

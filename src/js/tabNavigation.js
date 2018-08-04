@@ -51,6 +51,7 @@ function navigateToTab (pageName) {
 	currentPage.elem.style.display = "none";
 	currentPage.navElem.classList.remove("nav-selected");
 	currentPage.navElem.style.borderTop = "solid 5px rgba(0,0,0,0)";
+	currentPage.navElem.style.color = "#fff";
 
 	/* importing themeChange object
 	 * from themeChange.js
@@ -62,6 +63,7 @@ function navigateToTab (pageName) {
 	currentPage.elem.style.display = "block";
 	currentPage.navElem.classList.add("nav-selected");
 	currentPage.navElem.style.borderTop = `solid 5px ${theme.changes[0].colors[theme.currentThemeCounter]}`;
+	currentPage.navElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
 }
 
 /* END NAVIGATION FOR DESKTOP */
