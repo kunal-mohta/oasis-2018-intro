@@ -66,8 +66,8 @@ config = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
 			inject: 'body'
-		})
-		//new UglifyJSPlugin(),
+		}),
+		new UglifyJSPlugin(),
 		//new webpack.HotModuleReplacementPlugin(),
 	],
 }

@@ -11,7 +11,29 @@
             width: 100vw;
             background: #000;
             /* display: none; */
-            /* animation: loader-anim 0.5s linear forwards; */
+            animation: loader-anim 2s linear forwards;
+            animation-delay: 4s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        #main-loader {
+            animation: fade-loader 2s linear forwards;
+            animation-delay: 4s;
+        }
+
+        @keyframes fade-loader {
+            from {
+                opacity: 1;
+                filter: blur(0);
+            }
+            to {
+                opacity: 0;
+                filter: blur(30px);
+                transform: scale(10);
+            }
         }
 
         @keyframes loader-anim {
