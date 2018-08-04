@@ -46,7 +46,10 @@ html, body {
   background: url('../assets/imgs/content-bg.png');
   filter: hue-rotate(259deg) saturate(61.5%);
   background-size: cover;
+  transition: 1s all;
 }
+
+
 
 #theme-wrapper {
     z-index: 1;
