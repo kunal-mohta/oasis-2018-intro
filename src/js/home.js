@@ -1,5 +1,23 @@
 "use strict";
 
+// loader
+let loaderWrapper = document.getElementById("loader-wrapper");
+let mainLoader = document.getElementById("main-loader");
+let oasisTitle = document.getElementsByClassName("oasis-li");
+let oasisSlogan = document.getElementById("oasis-slogan");
+let oasisText = document.getElementById("oasis-text");
+let oasisDate = document.getElementById("oasis-date");
+window.onload = function () {
+	for(let i=0; i<oasisTitle.length; i++)
+		oasisTitle[i].classList.add("title-smoke");
+	oasisSlogan.classList.add("slogan-fade-in");
+	loaderWrapper.classList.add("wrapper-fade-out");
+	mainLoader.classList.add("loader-transition");
+	oasisText.classList.add("wrapper-fade-out");
+	oasisDate.classList.add("wrapper-fade-out");
+	setTimeout(function() {loaderWrapper.style.display = "none";}, 3500);
+};
+
 //teaser
 document.getElementsByClassName("home-teaser")[0].addEventListener("click", function(){
 	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";

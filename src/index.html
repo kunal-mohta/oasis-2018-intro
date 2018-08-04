@@ -10,33 +10,37 @@
             height: 100vh;
             width: 100vw;
             background: #000;
-            /* display: none; */
-            animation: loader-anim 2s linear forwards;
-            animation-delay: 4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 999;
+            color: #fff;
+        }
+        .wrapper-fade-out {
+            animation: loader-fade-out 1.5s linear forwards;
+            animation-delay: 2s;
         }
 
-        #main-loader {
-            animation: fade-loader 2s linear forwards;
-            animation-delay: 4s;
+        .loader-transition {
+            animation: fade-loader 1.5s linear forwards;
+            animation-delay: 2s
         }
 
         @keyframes fade-loader {
             from {
-                opacity: 1;
                 filter: blur(0);
             }
             to {
-                opacity: 0;
                 filter: blur(30px);
-                transform: scale(10);
+                transform: scale(4);
             }
         }
 
-        @keyframes loader-anim {
+        @keyframes loader-fade-out {
             from {
                 opacity: 1;
             }
@@ -45,16 +49,111 @@
             }
         }
 
-        /* Loader */
+        .text-fade-out {
+            animation: text-fade-out 0.5s linear forwards;
+            animation-delay: 2s;
+        }
+        @keyframes text-fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
 
+        #oasis-text {
+            font-size: 5vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 5vh;
+        }
+
+        #oasis-title ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #oasis-title ul li {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title-smoke {
+            animation: smoke 1s linear forwards;
+        }
+
+        @keyframes smoke {
+            from {
+                filter: blur(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                filter: blur(20px);
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
+
+        .li-1 {
+            animation-delay: 0.1s;
+        }
+        .li-2 {
+            animation-delay: 0.2s;
+        }
+        .li-3 {
+            animation-delay: 0.3s;
+        }
+        .li-4 {
+            animation-delay: 0.4s;
+        }
+        .li-5 {
+            animation-delay: 0.5s;
+        }
+        .li-6 {
+            animation-delay: 0.6s;
+        }
+        .li-7 {
+            animation-delay: 0.7s;
+        }
+        .li-8 {
+            animation-delay: 0.8s;
+        }
+
+        #oasis-title, #oasis-slogan {
+            position: absolute;
+        }
+
+        #oasis-slogan {
+            opacity: 0;
+        }
+
+        .slogan-fade-in {
+            animation: fade-in 0.5s linear forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Loader */
         #main-loader {
             width: 480px;
             height: 480px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -240px;
-            margin-left: -240px;
+            position: relative;
         }
 
         #main-loader .ring {
@@ -985,6 +1084,28 @@
             <div class="ring el-13"></div>
             <div class="ring el-14"></div>
             <div class="ring el-15"></div>
+        </div>
+        <div id="oasis-text">
+            <div id="oasis-title">
+                <ul>
+                    <li class="oasis-li li-1">O</li>
+                    <li class="oasis-li li-2">A</li>
+                    <li class="oasis-li li-3">S</li>
+                    <li class="oasis-li li-4">I</li>
+                    <li class="oasis-li li-5">S</li>
+                    <li class="oasis-li li-6">'</li>
+                    <li class="oasis-li li-7">1</li>
+                    <li class="oasis-li li-8">8</li>
+                </ul>
+            </div>
+            <div id="oasis-slogan">
+                The Far Out Fest
+            </div>
+        </div>
+        <div id="oasis-date">
+            27
+            <sup>th</sup> Oct to 31
+            <sup>st</sup> Oct
         </div>
     </div>
     <!-- theme wrapper -->
