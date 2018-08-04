@@ -8,6 +8,7 @@
         <link rel = "stylesheet" href = "./css/handheld.scss" />
         <link rel = "stylesheet" href = "./css/desktop.scss" />
         <link rel="shortcut icon" href="https://bits-oasis.org/2017/static/pcradmin/images/Oasis-Logo.png" />
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body >
         <!-- theme wrapper -->
@@ -83,9 +84,13 @@
 
                         <form id = "prereg-form">
                             <input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" required />
-                            <input type = "email" name = "email" id = "prereg-input-email" placeholder="EMAIL" required />
-                            <input type = "number" name = "phone" id = "prereg-input-phone" placeholder="PHONE" required />
+                            <select name = "college" id = "prereg-input-college" required >
+                                <option value="" class="college-placeholder"hidden>COLLEGE NAME</option>
+                            </select>
+                            <input type = "email" name = "email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" id = "prereg-input-email" placeholder="EMAIL" required />
+                            <input type = "number" name = "phone" pattern="^[0-9]{10}" id = "prereg-input-phone" placeholder="PHONE" required />
 
+                            <div class="g-recaptcha" data-sitekey="6LfaPmgUAAAAALkroPo1ZXg69_aEdAJiV4v74YQU"></div>
                             <div id = "prereg-submit-wrapper">
                                 <button id = "prereg-submit">SUBMIT</button>
                             </div>

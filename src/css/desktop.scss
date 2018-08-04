@@ -380,4 +380,18 @@
     #prereg-form input:focus {
         border-bottom: solid 2px #fff;
     }
+
+    #prereg-input-college{
+        background: rgba(0,0,0,0);
+        border: none;
+        border-bottom: solid 2px #d0d0d0;
+        margin: 30px 0 0 10px;
+        width: 90%;
+        color: #ffffff;
+        padding: 10px 5px 10px;
+    }
+
+    .college-placeholder{
+        color:  #000000 !important;
+    }
 }
