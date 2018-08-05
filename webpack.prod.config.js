@@ -34,6 +34,7 @@ config = {
 				use: [
 					"style-loader", // creates style nodes from JS strings
 					"css-loader", // translates CSS into CommonJS
+					"postcss-loader", //Uses the PostCSS config
 					"sass-loader" // compiles Sass to CSS
 				]
 			},
