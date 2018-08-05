@@ -34,8 +34,8 @@ config = {
 				test: /\.scss$/,
 				use: [
 					"style-loader", // creates style nodes from JS strings
-					"css-loader", // translates CSS into CommonJS
-					"sass-loader" // compiles Sass to CSS
+					"css-loader?sourceMap", // translates CSS into CommonJS
+					"sass-loader?sourceMap" // compiles Sass to CSS
 				]
 			},
 			{
