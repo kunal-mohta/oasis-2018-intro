@@ -1,6 +1,6 @@
 const themeChange = {
 	
-	totalThemes: 4, 
+	totalThemes: 6,
 
 	currentThemeCounter: 0,
 
@@ -16,7 +16,7 @@ const themeChange = {
 	changes: [
 		{
 			//colors: ["#32b849", "#d65804", "#87ceeb", "#df1414"], // rock, hippie, lgbt, punk
-			colors: ["#df1414", "#d65804", "#32b849", "#87ceeb" ],
+			colors: ["#2D8ED8", "black", "#df1414", "#d65804", "#F0DF00", "#87ceeb" ],
 			// elems
 			elemClass: "nav-selected",
 			elem2Class: "mobile-nav-selected",
@@ -46,9 +46,7 @@ const themeChange = {
 		},
 		{
 			//hueRotate: ["259deg", "170deg", "306deg", "120deg"], // rock, hippie, lgbt, punk
-			hueRotate: [120, 170, 259, 306], // punk, hippie, rock, lgbt
-			//saturate: ["61.5%", "100%", "100%", "100%"], // rock, hippie, lgbt, punk
-			saturate: [100, 100, 61.5, 100], // rock, hippie, lgbt, punk
+			hueRotate: [0, 45, 120, 143, 180, 306], // goth, rock, punk, hippie, aghori, lgbt
 			elemClass: "main-container-background",
 			elem2Class: "main-wrapper-background",
 			cycleCounter: 0,
