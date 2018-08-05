@@ -21,6 +21,18 @@
             color: #fff;
         }
 
+		@media all and (max-width: 600px){
+			#main-loader{
+				transform: scale(0.5);
+			}	
+			#oasis-text, #oasis-slogan, #oasis-date {
+				transform: translateY(-15vh);
+			}
+		}
+		#oasis-text, #oasis-slogan, #oasis-date {
+			transform: translateY(-20px);
+		}
+
         .wrapper-fade-out {
             animation: loader-fade-out 1.5s linear forwards;
             animation-delay: 2s;
