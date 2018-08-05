@@ -1,6 +1,7 @@
 /* desktop */
 @media all and ( min-width: 600px ) {
     $firstThemeColor: #32b849;
+    $themeScrollWidth: 7%;
 
     .main-container {
         width: 90vw;
@@ -31,12 +32,11 @@
     /* navigation */
     #nav {
         height: 15%;
-        width: 90%;
+        width: 100% - $themeScrollWidth;
     }
 
     #logo {
-        height: 100%;
-        width: 10%;
+        padding-left: 20px;
 	}
 	
 	#mobile-nav-page {
@@ -296,7 +296,7 @@
     /* sub theme scroll */
     #theme-scroll {
       height: 100%;
-      width: 10%;
+      width: $themeScrollWidth;
       border-left: solid $firstThemeColor 5px;
       position: absolute;
       right: 0;

@@ -115,6 +115,13 @@
 		right: 0;
 		margin: 5%;
 		height: 0.5 * $nav-height;
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
 	}
 
 	/* main body */
