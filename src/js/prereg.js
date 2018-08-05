@@ -25,23 +25,23 @@ var phone = document.getElementById("prereg-input-phone").value;
 axios({
     method:'get',
     url: URL,
-  })
-    .then(function(response) {
-        console.log(response);
-        var i=0;
-        while(response.data){
-            var div_data=('<option value='+i+'>'+response.data.college+'</option>');
-            document.getElementById('prereg-input-college').appendChild(div_data);
-            i++;
-        }
-    })
-    .catch(function (error) {
-        console.log(error);
-    }); 
+})
+.then(function(response) {
+    console.log(response);
+    var i=0;
+    while(response.data){
+        var div_data=('<option value='+i+'>'+response.data.college+'</option>');
+        document.getElementById('prereg-input-college').appendChild(div_data);
+        i++;
+    }
+})
+.catch(function (error) {
+    console.log(error);
+});
 
 document.getElementById("prereg-form").onsubmit = function registerForm(f)
 {   
-	if(name!="" && phone!="" && email!="" && college!="")
+	if(isFieldBlank(name) && isFieldBlank(phone) && isFieldBlank(email) && isFieldBlank(college))
 	{
         axios.post(URL, {
             name: name,
@@ -79,3 +79,21 @@ document.getElementById("prereg-form").onsubmit = function registerForm(f)
     }
 	f.preventDefault();
 };
+
+// function validatePhoneNumber (num) {
+//     let phoneNumRegex = /^[0-9]{10}$/;
+//     let match = phoneNumRegex.test(num);
+
+//     return match;
+// }
+
+// function validateEmail(email) {
+//     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(String(email).toLowerCase());
+// }
+
+function isFieldBlank (val) {
+    var re = /^(\s)*$/;
+
+    return re.test(val);
+}
