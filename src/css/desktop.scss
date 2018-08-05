@@ -266,7 +266,7 @@
 
     /*contacts*/
     .content-page {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .contact-heading{
@@ -285,7 +285,7 @@
         text-align: center;
         align-items: center;
         flex-wrap: wrap;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .contact-info {
