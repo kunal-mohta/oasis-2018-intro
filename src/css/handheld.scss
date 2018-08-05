@@ -7,7 +7,6 @@
     .main-container {
         height: 100%;
         width: 100%;
-        border: solid 1px #000; /* temporary */
 	}
 
 	// .main-container::after {
@@ -123,7 +122,6 @@
 		top: $nav-height;
 		height: 75%;
 		width: 100%;
-		border: solid 1px #000; /* temporary */
 		color: white;
 		overflow: scroll;
 	}
@@ -250,5 +248,5 @@
 		font-family: "ikaros";
 		z-index: 3;
         color: #ffffff;
-    }
+	}
 }
