@@ -41,7 +41,11 @@ const themeChange = {
 					(elem) => {
 						elem.style.color = this.colors[counter];
 					}
-				);
+                );
+
+                const themeScroll = document.getElementById("theme-scroll");
+                themeScroll.className = "theme-scroll-anim";
+                setTimeout(function() {themeScroll.className=""}, 4000);
 			}
 		},
 		{
@@ -64,7 +68,7 @@ const themeChange = {
 	],
 
 	//TimeLapse between 2 theme change
-	timeLapse: 9000, //In millisecond
+	timeLapse: 6000, //In millisecond
 
 	//Function to trigger the themeChange and also increment the theme counter
 	triggerChange: function(){
@@ -88,10 +92,10 @@ module.exports = themeChange;
 
 function init() {
 	// Edit this to change tjhe transition duration (in seconds)
-    const TRANSITION_DURATION = 9;
+    const TRANSITION_DURATION = 6;
 
 	let PSEUDO_COUNT = 0;
-	const ANIMATION_DURATION = 4;
+	const ANIMATION_DURATION = 2.5;
 
 	const IMAGES = [
 		{
@@ -171,7 +175,7 @@ function init() {
 		});
 
         let currentIndex = 0;
-        setTimeout(next, 7750);
+        setTimeout(next, 4750);
         let isFirst = true;
 
 		// function to go to next image - defined inside startAnim to access currentIndex
