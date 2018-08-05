@@ -1,6 +1,6 @@
 /* desktop */
 @media all and ( min-width: 600px ) {
-    $firstThemeColor: #32b849;
+    $firstThemeColor: #2D8ED8;
     $themeScrollWidth: 7%;
 
     .main-container {
@@ -21,10 +21,10 @@
             width: 100%;
             top: 0;
             left: 0;
-            background: url('../assets/imgs/content-bg.png');
+            background: url('../assets/imgs/main-bg.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            filter: hue-rotate(259deg) saturate(61.5%);
+            filter: hue-rotate(0deg) saturate(61.5%);
   			transition: 1s all;
         }
     }

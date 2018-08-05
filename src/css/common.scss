@@ -13,7 +13,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
-$firstThemeColor: #32b849;
+$firstThemeColor: #2D8ED8;
 
 html, body {
 	position: relative;
@@ -43,8 +43,8 @@ html, body {
   height: 100%;
   width: 100%;
   position: absolute;
-  background: url('../assets/imgs/content-bg.png');
-  filter: hue-rotate(259deg) saturate(61.5%);
+  background: url('../assets/imgs/content-bg.jpg');
+  filter: hue-rotate(0deg);
   background-size: cover;
   transition: 1s all;
 }
