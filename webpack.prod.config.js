@@ -13,8 +13,7 @@ config = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "bundle.js",
 	},
-	devtool: 'inline-source-map',
-	mode: 'development',
+	mode: 'production', 
 	devServer: {
 		contentBase: './dist',
 	},
@@ -67,6 +66,7 @@ config = {
 			template: path.resolve(__dirname, "src", "index.html"),
 			inject: 'body'
 		}),
+		new UglifyJSPlugin(),
 	],
 }
 

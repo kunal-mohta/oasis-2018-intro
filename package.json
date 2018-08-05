@@ -4,10 +4,10 @@
   "description": "Oasis intro site",
   "private": true,
   "scripts": {
-    "start": "node ./node_modules/.bin/webpack-dev-server",
+    "start": "node ./node_modules/.bin/webpack-dev-server --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./node_modules/.bin/webpack --display-modules",
-    "watch": "node ./node_modules/.bin/webpack --watch"
+    "build": "node ./node_modules/.bin/webpack --display-modules --config webpack.prod.config.js",
+    "watch": "node ./node_modules/.bin/webpack --watch --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
