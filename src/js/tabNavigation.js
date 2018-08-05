@@ -87,6 +87,12 @@ function mobileNavigateToTab (pageName) {
 	currentPage.elem.style.display = "block";
 	currentPage.mobileNavElem.classList.add("mobile-nav-selected");
 	currentPage.mobileNavElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
+
+	// change opacity of glitch image
+	if (pageName==="home")
+		document.getElementById("image-container").style.opacity = 1;
+	else
+		document.getElementById("image-container").style.opacity = 0.3;
 }
 
 // open mobile navigation

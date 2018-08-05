@@ -104,3 +104,11 @@
 	  opacity: 0;
 	}
 }
+
+@media all and (max-width: 600px) {
+	#image-container {
+		right: 50%;
+		transform: translateX(50%);
+		transition: all 0.3s linear;
+	}
+}

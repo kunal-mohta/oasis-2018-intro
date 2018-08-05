@@ -54,9 +54,9 @@ function init() {
 		img.id = "image" + index;
 		div.appendChild(img);
 
-		let h1 = document.createElement("H1");
-		h1.innerHTML = obj.title;
-		div.appendChild(h1);
+		// let h1 = document.createElement("H1");
+		// h1.innerHTML = obj.title;
+		// div.appendChild(h1);
 
 		// display none if not first image
 		if (index != 0) {
