@@ -64,7 +64,14 @@ config = {
 		//new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
-			inject: 'body'
+			inject: 'body',
+			minify: {
+				removeComments: true,
+    			collapseWhitespace: true,
+    			conservativeCollapse: false,
+				preserveLineBreaks: false,
+				minifyCSS: true
+			}
 		}),
 		new UglifyJSPlugin(),
 	],
