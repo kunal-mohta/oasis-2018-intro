@@ -46,5 +46,9 @@
     "webpack": "^4.16.2",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "promise.prototype.finally": "^3.1.0"
   }
 }
