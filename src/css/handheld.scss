@@ -10,26 +10,26 @@
         border: solid 1px #000; /* temporary */
 	}
 
-	.main-container::after {
-		/* properties relative to main-container */
-		content: "";
-		height: $nav-height;
-		width: 100%;
-		background: #000;
-		position: absolute;
-		bottom: 0;
-	}
+	// .main-container::after {
+	// 	/* properties relative to main-container */
+	// 	content: "";
+	// 	height: $nav-height;
+	// 	width: 100%;
+	// 	background: #000;
+	// 	position: absolute;
+	// 	bottom: 0;
+	// }
 
-	.main-container::before {
-		/* properties relative to main-container */
-		content: "";
-		height: 15%;
-		width: 100%;
-		background: linear-gradient(to top, #000, rgba(0,0,0,0));
-		position: absolute;
-		bottom: 0;
-		z-index: 2;
-	}
+	// .main-container::before {
+	// 	/* properties relative to main-container */
+	// 	content: "";
+	// 	height: 15%;
+	// 	width: 100%;
+	// 	background: linear-gradient(to top, #000, rgba(0,0,0,0));
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	z-index: 2;
+	// }
 
 	.main-container-background {
 		background-position: 65% 0;
