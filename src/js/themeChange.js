@@ -4,7 +4,7 @@ const themeChange = {
 
 	currentThemeCounter: 0,
 
-	incrementThemeCounter: function(){
+	incrementThemeCounter: function () {
 		this.currentThemeCounter = ++this.currentThemeCounter % this.totalThemes;
 	},
 
@@ -16,7 +16,7 @@ const themeChange = {
 	changes: [
 		{
 			//colors: ["#32b849", "#d65804", "#87ceeb", "#df1414"], // rock, hippie, lgbt, punk
-			colors: ["#2D8ED8", "#EF5FDE", "#df1414", "#d65804", "#F0DF00", "#87ceeb" ],
+			colors: ["#2D8ED8", "#EF5FDE", "#df1414", "#d65804", "#F0DF00", "#87ceeb"],
 			// elems
 			elemClass: "nav-selected",
 			elem2Class: "mobile-nav-selected",
@@ -24,7 +24,7 @@ const themeChange = {
 
 			// text
 			elem4Class: "theme-color-text",
-			trigger: function(counter){
+			trigger: function (counter) {
 				const elem = document.getElementsByClassName(this.elemClass)[0];
 				elem.style.borderTop = `solid 5px ${this.colors[counter]}`;
 				elem.style.color = `${this.colors[counter]}`;
@@ -41,11 +41,11 @@ const themeChange = {
 					(elem) => {
 						elem.style.color = this.colors[counter];
 					}
-                );
+				);
 
-                const themeScroll = document.getElementById("theme-scroll");
-                themeScroll.className = "theme-scroll-anim";
-                setTimeout(function() {themeScroll.className=""}, 4000);
+				const themeScroll = document.getElementById("theme-scroll");
+				themeScroll.className = "theme-scroll-anim";
+				setTimeout(function () { themeScroll.className = ""; }, 4000);
 			}
 		},
 		{
@@ -54,8 +54,8 @@ const themeChange = {
 			elemClass: "main-container-background",
 			elem2Class: "main-wrapper-background",
 			cycleCounter: 0,
-			trigger: function(counter){
-				if(!counter) ++this.cycleCounter;
+			trigger: function (counter) {
+				if (!counter)++this.cycleCounter;
 				const hueRotateVal = this.cycleCounter * 360 + this.hueRotate[counter];
 
 				const contentBg = document.getElementsByClassName(this.elemClass)[0];
@@ -71,8 +71,8 @@ const themeChange = {
 	timeLapse: 6000, //In millisecond
 
 	//Function to trigger the themeChange and also increment the theme counter
-	triggerChange: function(){
-		setInterval( () => {
+	triggerChange: function () {
+		setInterval(() => {
 			this.incrementThemeCounter();
 			this.changes.forEach(change => change.trigger(this.currentThemeCounter));
 		}, this.timeLapse);
@@ -92,7 +92,7 @@ module.exports = themeChange;
 
 function init() {
 	// Edit this to change tjhe transition duration (in seconds)
-    const TRANSITION_DURATION = 6;
+	const TRANSITION_DURATION = 6;
 
 	let PSEUDO_COUNT = 0;
 	const ANIMATION_DURATION = 2.5;
@@ -160,8 +160,8 @@ function init() {
 		// check if the image divs have been mounted to the document
 		if (document.readyState === "complete") {
 			clearInterval(checkState);
-            // start animation/transition
-            themeChange.triggerChange();
+			// start animation/transition
+			themeChange.triggerChange();
 			startAnim();
 		}
 	}, 100);
@@ -174,9 +174,9 @@ function init() {
 			setURL(index, dimensions);
 		});
 
-        let currentIndex = 0;
-        setTimeout(next, 4750);
-        let isFirst = true;
+		let currentIndex = 0;
+		setTimeout(next, 4750);
+		let isFirst = true;
 
 		// function to go to next image - defined inside startAnim to access currentIndex
 		function next() {
@@ -185,11 +185,11 @@ function init() {
 			let nextIndex = (++currentIndex) % (IMAGES.length);
 			animateIn(nextIndex, ANIMATION_DURATION);
 
-            currentIndex = nextIndex;
-            if(isFirst) {
-                setInterval(next, TRANSITION_DURATION*1000);
-                isFirst = false;
-            }
+			currentIndex = nextIndex;
+			if (isFirst) {
+				setInterval(next, TRANSITION_DURATION * 1000);
+				isFirst = false;
+			}
 		}
 
 		// get viewport current dimensions
