@@ -191,6 +191,22 @@ function init() {
                 isFirst = false;
             }
 		}
+
+		// get viewport current dimensions
+		let dimensions = {
+			w: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+			h: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+		};
+		setInterval(function () {
+			let newWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+			let newHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+			if (newWidth !== dimensions.w || newHeight !== dimensions.h) {
+				dimensions.w = newWidth;
+				dimensions.h = newHeight;
+				for(let i = 0; i<IMAGES.length; i++)
+					setDimension(i, getDimensions(i));
+			}
+		}, 500)
 	}
 
 	function getDimensions(index) {
@@ -230,6 +246,40 @@ function init() {
 		div.pseudoStyle("before", "background-size", dimensions.width + "px " + dimensions.height + "px");
 		div.pseudoStyle("after", "content", "''");
 		div.pseudoStyle("after", "background-image", "url(\"" + IMAGES[index].require() + "\")");
+		div.pseudoStyle("after", "height", dimensions.height + "px");
+		div.pseudoStyle("after", "width", dimensions.width + "px");
+		div.pseudoStyle("after", "background-size", dimensions.width + "px " + dimensions.height + "px");
+	}
+
+	function setDimension(index, dimensions) {
+		let UID = {
+			getNew: function () {
+				PSEUDO_COUNT++;
+				return PSEUDO_COUNT;
+			}
+		};
+
+		HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
+			let _this = this;
+			let _sheetId = "pseudoStyles";
+			let _head = document.head || document.getElementsByTagName("head")[0];
+			let _sheet = document.getElementById(_sheetId) || document.createElement("style");
+			_sheet.id = _sheetId;
+			let className = "pseudoStyle" + UID.getNew();
+
+			_this.className += " " + className;
+
+			_sheet.innerHTML += "\n." + className + ":" + element + "{" + prop + ":" + value + "}";
+			_head.appendChild(_sheet);
+			return this;
+		};
+
+		let div = document.getElementById("img" + index);
+		div.pseudoStyle("before", "content", "''");
+		div.pseudoStyle("before", "height", dimensions.height + "px");
+		div.pseudoStyle("before", "width", dimensions.width + "px");
+		div.pseudoStyle("before", "background-size", dimensions.width + "px " + dimensions.height + "px");
+		div.pseudoStyle("after", "content", "''");
 		div.pseudoStyle("after", "height", dimensions.height + "px");
 		div.pseudoStyle("after", "width", dimensions.width + "px");
 		div.pseudoStyle("after", "background-size", dimensions.width + "px " + dimensions.height + "px");
