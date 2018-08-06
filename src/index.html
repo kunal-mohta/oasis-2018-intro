@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="https://bits-oasis.org/2017/static/pcradmin/images/Oasis-Logo.png" />
     <style>
+        @font-face {
+            font-family: "ikaros";
+            src: url("./assets/fonts/Ikaros-Regular.otf");
+        }
         #loader-wrapper {
             height: 100vh;
             width: 100vw;
@@ -25,13 +29,19 @@
 			#main-loader{
 				transform: scale(0.5);
 			}	
-			#oasis-text, #oasis-slogan, #oasis-date {
+			#oasis-text, #oasis-date {
 				transform: translateY(-15vh);
 			}
 		}
-		#oasis-text, #oasis-slogan, #oasis-date {
+		#oasis-text, #oasis-date {
 			transform: translateY(-20px);
-		}
+        }
+        #oasis-date, #oasis-slogan {
+            font-family: "ikaros";
+        }
+        #oasis-slogan {
+            font-weight: 10;
+        }
 
         .wrapper-fade-out {
             animation: loader-fade-out 1.5s linear forwards;
@@ -91,6 +101,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            font-family: "ikaros";
         }
 
         #oasis-title ul li {
@@ -1127,7 +1138,7 @@
         </div>
         <div id="oasis-date">
             27
-            <sup>th</sup> Oct to 31
+            <sup>th</sup> Oct - 31
             <sup>st</sup> Oct
         </div>
     </div>
