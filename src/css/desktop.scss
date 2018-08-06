@@ -104,14 +104,14 @@
 
     .home-content{
         font-family: 'Roboto', sans-serif; /*change font here*/
-        font-size: 20px;
+        font-size: 120%;
         padding: 10px;
         color: #ffffff;
     }
 
     .home-teaser{
         font-family: "ikaros"; /*change font here*/
-        font-size: 27px;
+        font-size: 130%;
         margin: 30px 10px 0px 10px;
         cursor: pointer;
     }
@@ -332,7 +332,7 @@
 
 		.theme-number {
 			color: white;		
-			font-size: 3vh;
+			font-size: 130%;
 			font-family: ikaros;
             opacity: 0.47;
             transition: opacity 1s ease-in-out;
@@ -366,5 +366,27 @@
         font-size: 24px;
         font-family: "ikaros";
         color: #ffffff;
+    }
+}
+
+@media all and ( max-height: 600px ) and ( orientation: landscape ) {
+    .home-content, .about-content, .contact-content {
+        font-size: 80%;
+    }
+
+    .theme-number {
+        font-size: 75% !important;
+    }
+
+    .home-teaser {
+        font-size: 80%;
+    }
+
+    .video-img {
+        font-size: 75%;
+    }
+
+    .contact-heading, .about-heading {
+        font-size: 100%;
     }
 }
