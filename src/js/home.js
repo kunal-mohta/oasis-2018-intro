@@ -24,9 +24,9 @@ document.getElementsByClassName("home-teaser")[0].addEventListener("click", func
 }); 
 
 //brochure
-document.getElementsByClassName("about-download")[0].addEventListener("click", function(){
-	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
-}); 
+// document.getElementsByClassName("about-download")[0].addEventListener("click", function(){
+// 	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
+// }); 
 
 //days to go
 var DDay =  "2018-10-27";

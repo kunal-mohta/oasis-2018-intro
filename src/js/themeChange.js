@@ -206,7 +206,7 @@ function init() {
 				for(let i = 0; i<IMAGES.length; i++)
 					setDimension(i, getDimensions(i));
 			}
-		}, 500)
+		}, 500);
 	}
 
 	function getDimensions(index) {
