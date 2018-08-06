@@ -9,9 +9,8 @@ const themeChange = {
 	},
 
 	//Changes -> Array of changes to be implemented on the next theme change
-	//Each change should have a trigger function which is to be actually called
+	//Each change SHOULD have a trigger function which is to be actually called
 	//on the theme change
-	//The parameter passed to each trigger function is the currentThemeCounter
 
 	changes: [
 		{
@@ -63,6 +62,27 @@ const themeChange = {
 
 				const mainBg = document.getElementsByClassName(this.elem2Class)[0];
 				mainBg.style.filter = `hue-rotate(${hueRotateVal}deg)`;
+			}
+		},
+		{
+			setup: function(totalThemes){
+				//console.log(this);
+				const themeScrollIW = document.getElementById("theme-scroll-innerwrap");
+				for(let i = 0; i < totalThemes; ++i){
+					const div = document.createElement("div");
+					const textNode = document.createTextNode(
+					`${i < 9 ? "0" :  ""}${i+1}`);
+					div.className = "theme-number";
+					div.appendChild(textNode);
+					themeScrollIW.appendChild(div);
+				}
+				const themeNumbers = document.getElementsByClassName("theme-number");	
+				themeNumbers[0].style.opacity = "1";
+			},
+			trigger: function(counter){
+				const themeNumbers = document.getElementsByClassName("theme-number");	
+				Array.from(themeNumbers).forEach(elem => elem.style.opacity = "");
+				themeNumbers[counter].style.opacity = "1";
 			}
 		}
 	],
@@ -162,6 +182,7 @@ function init() {
 			clearInterval(checkState);
 			// start animation/transition
 			themeChange.triggerChange();
+			themeChange.changes[2].setup(themeChange.totalThemes);
 			startAnim();
 		}
 	}, 100);
