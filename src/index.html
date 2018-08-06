@@ -34,7 +34,8 @@
 			}
 		}
 		#oasis-text, #oasis-date {
-			transform: translateY(-20px);
+            transform: translateY(-20px);
+            user-select: none;
         }
         #oasis-date, #oasis-slogan {
             font-family: "ikaros";
@@ -1370,8 +1371,10 @@
             </div>
                 <!-- sub theme scroller -->
                 <div id = "theme-scroll">
-					<div id = "theme-scroll-innerwrap">
-					</div>
+                    <div id="theme-scroll-outerwrap">
+                        <div id = "theme-scroll-innerwrap">
+                        </div>
+                    </div> 
 				</div>
 
             <!-- sub theme scroller -->
