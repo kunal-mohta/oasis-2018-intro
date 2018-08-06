@@ -120,7 +120,8 @@
     .about-heading{
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
-        padding: 10px;
+        padding-left: 10px;
+        padding-top: 20px;
     }
 
     .about-content{
@@ -370,6 +371,21 @@
 }
 
 @media all and ( max-height: 600px ) and ( orientation: landscape ) {
+    #days-countdown {
+        bottom: 3px;
+        font-size: 12px;
+    }
+    #social-media {
+        bottom: 3px;
+        padding-bottom: 0;
+    }
+    .social-icon {
+        width: 20px;
+        margin: 0 5px 0 5px;
+    }
+    .home-heading {
+        padding-bottom: 0;
+    }
     .home-content, .about-content, .contact-content {
         font-size: 80%;
     }
@@ -380,6 +396,7 @@
 
     .home-teaser {
         font-size: 80%;
+		margin-top: 0;
     }
 
     .video-img {
