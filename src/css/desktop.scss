@@ -37,6 +37,7 @@
 
     #logo {
         padding-left: 20px;
+        padding-top: 10px;
 	}
 	
 	#mobile-nav-page {
@@ -110,7 +111,6 @@
         font-family: "ikaros"; /*change font here*/
         font-size: 27px;
         margin: 50px 10px 0px 10px;
-        padding: 5px;
         cursor: pointer;
     }
 
@@ -330,7 +330,7 @@
 
 		.theme-number {
 			color: white;		
-			font-size: 18px;
+			font-size: 3vh;
 			font-family: ikaros;
             opacity: 0.47;
             transition: opacity 1s ease-in-out;
@@ -360,7 +360,7 @@
     #days-countdown{
         position: absolute;
         bottom: 20px;
-        padding: 10px;
+        padding-left: 20px;
         font-size: 24px;
         font-family: "ikaros";
         color: #ffffff;
