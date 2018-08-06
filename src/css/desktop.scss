@@ -51,10 +51,11 @@
         margin: 0;
         padding: 0;
         font-family: "ikaros";
+        margin-right: 20px;
     }
 
     #nav-list li {
-        height: 100%;
+        height: 70%;
         width: 8vw;
         font-size: 2vh;
         display: flex;
@@ -98,6 +99,7 @@
         font-size: 5vw;
         padding: 10px;
         color: #ffffff;
+        margin-top: 20px;
     }
 
     .home-content{
@@ -110,7 +112,7 @@
     .home-teaser{
         font-family: "ikaros"; /*change font here*/
         font-size: 27px;
-        margin: 50px 10px 0px 10px;
+        margin: 30px 10px 0px 10px;
         cursor: pointer;
     }
 
