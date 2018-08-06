@@ -10,6 +10,7 @@
             font-family: "ikaros";
             src: url("./assets/fonts/Ikaros-Regular.otf");
         }
+
         #loader-wrapper {
             height: 100vh;
             width: 100vw;
@@ -24,24 +25,28 @@
             z-index: 999;
             color: #fff;
         }
+        
+        #oasis-text {
+            margin-bottom: 10px;
+        }
 
-		@media all and (max-width: 600px){
-			#main-loader{
-				transform: scale(0.5);
-			}	
-			#oasis-text, #oasis-date {
-				transform: translateY(-15vh);
-			}
-		}
-		#oasis-text, #oasis-date {
+        #oasis-text,
+        #oasis-date {
             transform: translateY(-20px);
             user-select: none;
         }
-        #oasis-date, #oasis-slogan {
+
+        #oasis-date,
+        #oasis-slogan {
             font-family: "ikaros";
         }
+
         #oasis-slogan {
             font-weight: 10;
+        }
+
+        #oasis-date {
+            font-size: 3vh;
         }
 
         .wrapper-fade-out {
@@ -1097,6 +1102,151 @@
             -moz-animation: e-15 2s linear 0s infinite alternate;
             animation: e-15 2s linear 0s infinite alternate;
         }
+
+        @media all and (max-width: 600px), all and (max-height: 600px) and (orientation: landscape)  {
+            #main-loader {
+                transform: scale(0.5);
+            }
+            #oasis-text,
+            #oasis-date {
+                transform: translateY(-15vh);
+            }
+            #main-loader {
+                width: 200px;
+                height: 200px;
+            }
+            .ring.el-1 {
+                border: 2px solid black;
+                left: 6.6666666667px;
+                top: 6.6666666667px;
+                width: 186.6666666667px;
+                height: 186.6666666667px;
+                border-radius: 65.3333333333px;
+            }
+            .ring.el-2 {
+                border: 2px solid black;
+                left: 13.3333333333px;
+                top: 13.3333333333px;
+                width: 173.3333333333px;
+                height: 173.3333333333px;
+                border-radius: 60.6666666667px;
+            }
+            .ring.el-3 {
+                border: 2px solid black;
+                left: 20px;
+                top: 20px;
+                width: 160px;
+                height: 160px;
+                border-radius: 56px;
+            }
+            .ring.el-4 {
+                border: 2px solid black;
+                left: 26.6666666667px;
+                top: 26.6666666667px;
+                width: 146.6666666667px;
+                height: 146.6666666667px;
+                border-radius: 51.3333333333px;
+            }
+            .ring.el-5 {
+                border: 2px solid black;
+                left: 33.3333333333px;
+                top: 33.3333333333px;
+                width: 133.3333333333px;
+                height: 133.3333333333px;
+                border-radius: 46.6666666667px;
+            }
+            .ring.el-6 {
+                border: 2px solid black;
+                left: 40px;
+                top: 40px;
+                width: 120px;
+                height: 120px;
+                border-radius: 42px;
+            }
+            .ring.el-7 {
+                border: 2px solid black;
+                left: 46.6666666667px;
+                top: 46.6666666667px;
+                width: 106.6666666667px;
+                height: 106.6666666667px;
+                border-radius: 37.3333333333px;
+            }
+            .ring.el-8 {
+                border: 2px solid black;
+                left: 53.3333333333px;
+                top: 53.3333333333px;
+                width: 93.3333333333px;
+                height: 93.3333333333px;
+                border-radius: 32.6666666667px;
+            }
+            .ring.el-9 {
+                border: 2px solid black;
+                left: 60px;
+                top: 60px;
+                width: 80px;
+                height: 80px;
+                border-radius: 28px;
+            }
+            .ring.el-10 {
+                border: 2px solid black;
+                left: 66.6666666667px;
+                top: 66.6666666667px;
+                width: 66.6666666667px;
+                height: 66.6666666667px;
+                border-radius: 23.3333333333px;
+            }
+            .ring.el-11 {
+                border: 2px solid black;
+                left: 73.3333333333px;
+                top: 73.3333333333px;
+                width: 53.3333333333px;
+                height: 53.3333333333px;
+                border-radius: 18.6666666667px;
+            }
+            .ring.el-12 {
+                border: 2px solid black;
+                left: 80px;
+                top: 80px;
+                width: 40px;
+                height: 40px;
+                border-radius: 14px;
+            }
+            .ring.el-13 {
+                border: 2px solid black;
+                left: 86.6666666667px;
+                top: 86.6666666667px;
+                width: 26.6666666667px;
+                height: 26.6666666667px;
+                border-radius: 9.3333333333px;
+            }
+            .ring.el-14 {
+                border: 2px solid black;
+                left: 93.3333333333px;
+                top: 93.3333333333px;
+                width: 13.3333333333px;
+                height: 13.3333333333px;
+                border-radius: 4.6666666667px;
+            }
+            .ring.el-15 {
+                border: 2px solid black;
+                left: 100px;
+                top: 100px;
+                width: 0px;
+                height: 0px;
+                border-radius: 0px;
+            }
+            #oasis-text, #oasis-date {
+                transform: none;
+            }
+        }
+        @media all and (max-height: 600px) and (orientation: landscape) {
+            #oasis-text {
+                font-size: 8vh;
+            }
+            #oasis-date {
+                font-size: 4vh;
+            }
+        }
     </style>
 </head>
 
@@ -1163,7 +1313,7 @@
             <!-- navigation -->
             <div id="nav">
                 <div id="logo">
-                    <img src = "assets/imgs/logo.svg" alt = "Oasis logo" />
+                    <img src="assets/imgs/logo.svg" alt="Oasis logo" />
                 </div>
 
                 <ul id="nav-list">
@@ -1254,32 +1404,28 @@
                         <div class="video-img">
                             <div class="img-heading theme-color-text">Oasis'18 Teaser</div>
                             <div class="js-overlay-start img-thumbnail teaser18" data-url="https://www.youtube.com/embed/oWDZY6y7ED8?rel=0&amp;showinfo=0&amp;autoplay=1">
-                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail"
-                                />
+                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail" />
                             </div>
                         </div>
 
                         <div class="video-img">
                             <div class="img-heading theme-color-text">Oasis'17 Aftermovie</div>
                             <div class="js-overlay-start img-thumbnail aftermovie17" data-url="https://www.youtube.com/embed/xDyabSZ-nxA?rel=0&amp;showinfo=0&amp;autoplay=1">
-                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail"
-                                />
+                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail" />
                             </div>
                         </div>
 
                         <div class="video-img">
                             <div class="img-heading theme-color-text">Oasis'17 Teaser</div>
                             <div class="js-overlay-start img-thumbnail teaser17" data-url="https://www.youtube.com/embed/FN71wnk58Hg?rel=0&amp;showinfo=0&amp;autoplay=1">
-                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail"
-                                />
+                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail" />
                             </div>
                         </div>
 
                         <div class="video-img">
                             <div class="img-heading theme-color-text">Oasis'16 Aftermovie</div>
                             <div class="js-overlay-start img-thumbnail aftermovie16" data-url="https://www.youtube.com/embed/rh7WkyNXNRE?rel=0&amp;showinfo=0&amp;autoplay=1">
-                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail"
-                                />
+                                <img src="./assets/video_img/youtube_play.svg" alt="Oasis'18 Teaser" class="youtube-thumbnail" />
                             </div>
                         </div>
                     </div>
@@ -1369,13 +1515,13 @@
                 </div>
 
             </div>
-                <!-- sub theme scroller -->
-                <div id = "theme-scroll">
-                    <div id="theme-scroll-outerwrap">
-                        <div id = "theme-scroll-innerwrap">
-                        </div>
-                    </div> 
-				</div>
+            <!-- sub theme scroller -->
+            <div id="theme-scroll">
+                <div id="theme-scroll-outerwrap">
+                    <div id="theme-scroll-innerwrap">
+                    </div>
+                </div>
+            </div>
 
             <!-- sub theme scroller -->
             <!-- <div id="theme-scroll"></div> -->

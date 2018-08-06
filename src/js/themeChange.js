@@ -71,7 +71,8 @@ const themeChange = {
 				for(let i = 0; i < totalThemes; ++i){
 					const div = document.createElement("div");
 					const textNode = document.createTextNode(
-					`${i < 9 ? "0" :  ""}${i+1}`);
+						`${i < 9 ? "0" :  ""}${i+1}`
+					);
 					div.className = "theme-number";
 					div.appendChild(textNode);
 					themeScrollIW.appendChild(div);
