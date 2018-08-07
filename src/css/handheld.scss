@@ -131,6 +131,7 @@
 		width: 100%;
 		color: white;
 		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	.content-page:not(#home) {
