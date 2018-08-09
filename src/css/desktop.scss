@@ -440,6 +440,11 @@
     .college-placeholder{
         color:  #000000 !important;
     }
+
+    #prereg-msg-container {
+        height: 50%;
+        width: 50%;
+    }
 }
 
 @media all and ( max-height: 600px ) and ( orientation: landscape ) {

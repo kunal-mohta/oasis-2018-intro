@@ -78,6 +78,42 @@ html, body {
     transition: color 0.5s linear;
 }
 
+#prereg-msg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+#prereg-msg-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'productSans', sans-serif;
+    font-size: 200%;
+    background: white;
+}
+
+#close-prereg-msg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 5px 0 0;
+    height: 10%;
+}
+
+#close-prereg-msg:hover {
+    cursor: pointer;
+}
+
 /* navigation */
 #nav {
 	position: absolute;

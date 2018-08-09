@@ -1,3 +1,6 @@
+let prergOverlay = document.getElementById("prereg-msg-overlay"),
+    preregMsg = document.getElementById("prereg-msg");
+
 // var axios = require("axios");
 // var URL = "https://bits-oasis.org/registration/intro/";
 
@@ -56,16 +59,20 @@ document.getElementById("prereg-form").onsubmit = function registerForm(f)
             }
             else {
                 // incorrect phone number format
-                
+
+                openPreregDialogMsg("Please enter a correct phone number");
             }
         }
         else {
             // incorrect email format
+
+            openPreregDialogMsg("Please enter a correct email address");
         }
     }
     else {
         // one or more of the fields is blank
 
+        openPreregDialogMsg("Please fill all the fields");
     }
 
     f.preventDefault();
@@ -100,6 +107,13 @@ function trimInput (vals) {
     return vals;
 }
 
-// function preregDialogMsg (msg) {
+function openPreregDialogMsg (msg) {
+    prergOverlay.style.display = "flex";
+    preregMsg.innerHTML = msg;
+}
 
-// };
+function closePreregDialogMsg () {
+    prergOverlay.style.display = "none";
+}
+
+document.getElementById("close-prereg-msg").addEventListener("click", closePreregDialogMsg);
