@@ -83,12 +83,13 @@
                         <div class = "prereg-heading">PreReg</div>
 
                         <form id = "prereg-form">
-                            <input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" required />
-                            <select name = "college" id = "prereg-input-college" required >
+                            <input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" />
+                            <select name = "college" id = "prereg-input-college" >
                                 <option value="" class="college-placeholder"hidden>COLLEGE NAME</option>
+                                <option value="aa">aa</option>
                             </select>
-                            <input type = "email" name = "email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" id = "prereg-input-email" placeholder="EMAIL" required />
-                            <input type = "number" name = "phone" pattern="^[0-9]{10}" id = "prereg-input-phone" placeholder="PHONE" required />
+                            <input type = "text" name = "email" id = "prereg-input-email" placeholder="EMAIL" />
+                            <input type = "number" name = "phone" id = "prereg-input-phone" placeholder="PHONE" />
 
                             <div class="g-recaptcha" data-sitekey="6LfaPmgUAAAAALkroPo1ZXg69_aEdAJiV4v74YQU"></div>
                             <div id = "prereg-submit-wrapper">
