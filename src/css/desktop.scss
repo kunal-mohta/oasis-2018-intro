@@ -1,36 +1,48 @@
 /* desktop */
 @media all and ( min-width: 600px ) {
+    $firstThemeColor: #2D8ED8;
+    $themeScrollWidth: 7%;
+
     .main-container {
         width: 90vw;
         height: 80vh;
         position: relative;
-        border: solid 1px black; /* temporary */
+        overflow-x: hidden;
     }
 
-    .main-container-background {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        background: url('../assets/imgs/content-bg.png');
-        filter: hue-rotate(-101deg) saturate(61.5%);
-        background-size: cover;
+    #theme-wrapper {
+        .main-container {
+            box-shadow: 0px 0px 40px black;
+        }
+
+        .main-wrapper-background {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: url('../assets/imgs/main-bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: hue-rotate(0deg) saturate(61.5%);
+  			transition: 1s all;
+        }
     }
 
     /* navigation */
     #nav {
         height: 15%;
-        width: 90%;
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: space-between;
+        width: 100% - $themeScrollWidth;
     }
 
     #logo {
-        height: 100%;
-        width: 10%;
-        border: solid 1px black; /* temporary */
-    }
+        padding-left: 20px;
+        padding-top: 10px;
+	}
+	
+	#mobile-nav-page {
+		display: none;
+	}
 
     #nav-list {
         list-style: none;
@@ -39,10 +51,11 @@
         margin: 0;
         padding: 0;
         font-family: "ikaros";
+        margin-right: 20px;
     }
 
     #nav-list li {
-        height: 100%;
+        height: 70%;
         width: 8vw;
         font-size: 2vh;
         display: flex;
@@ -51,15 +64,21 @@
         border-top: solid 5px rgba(0,0,0,0);
         box-sizing: border-box;
         color: #fff;
+        transition: border-color 0.5s linear, color 0.5s linear;
     }
 
     #nav-list .nav-selected {
-      border-top: solid 5px green;
-      box-sizing: border-box;
+		border-top: solid 5px $firstThemeColor;
+        box-sizing: border-box;
+        color: $firstThemeColor;
     }
 
     #nav-list li:hover {
         cursor: pointer;
+    }
+
+    #ham-icon {
+      	display: none;
     }
 
     /* main body */
@@ -68,14 +87,7 @@
         width: 48%;
         position: absolute;
         top: 15%;
-        border: solid 1px black; /* temporary */
-    }
-
-    .content-page {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
+        z-index: 999;
     }
 
     .content-page:not(#home) {
@@ -84,36 +96,32 @@
 
     /*home*/
     .home-heading{
-        font-family: "ikaros"; /*change font here*/
         font-size: 5vw;
         padding: 10px;
         color: #ffffff;
+        margin-top: 20px;
     }
 
     .home-content{
         font-family: 'Roboto', sans-serif; /*change font here*/
-        font-size: 20px;
+        font-size: 120%;
         padding: 10px;
         color: #ffffff;
     }
 
     .home-teaser{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
-        font-size: 27px;
-        margin: 50px 10px 0px 10px;
-        padding: 5px;
+        font-size: 130%;
+        margin: 30px 10px 0px 10px;
         cursor: pointer;
-        color: #2D8ED8;
     }
 
     /*about*/
     .about-heading{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
-        padding: 10px;
-        color: #2D8ED8;
+        padding-left: 10px;
+        padding-top: 20px;
     }
 
     .about-content{
@@ -128,16 +136,18 @@
     }
 
     .about-download{
-        color: black; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 27px;
         margin: 50px 10px 0px 10px;
         padding: 5px;
         cursor: pointer;
-        color: #2D8ED8;
     }
 
     /*videos*/
+    .videos-content-mob, .videos-heading {
+        display: none;
+    }
+    
     .videos-content {
         height: 100%;
         width: 100%;
@@ -163,7 +173,6 @@
         padding-bottom: 1%;
         font-family: "ikaros";
         width: 100%;
-        color: #2D8ED8;
     }
 
 
@@ -259,11 +268,10 @@
 
     /*contacts*/
     .content-page {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .contact-heading{
-        color: #F0DF00; /*color to be changes according to theme*/
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
@@ -279,7 +287,7 @@
         text-align: center;
         align-items: center;
         flex-wrap: wrap;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .contact-info {
@@ -290,11 +298,49 @@
     /* sub theme scroll */
     #theme-scroll {
       height: 100%;
-      width: 10%;
-      border-left: solid red 5px;
+      width: $themeScrollWidth;
+      border-left: solid $firstThemeColor 5px;
       position: absolute;
       right: 0;
       top: 0;
+      transition: border-color 0.5s linear;
+    
+
+    .theme-scroll-anim {
+        animation: bar-anim 2s linear forwards;
+    }
+
+    @keyframes bar-anim {
+        0% {
+            height: 0%;
+        }
+        100% {
+            height: 100%;
+        }
+    }
+    #theme-scroll-outerwrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+	  #theme-scroll-innerwrap {
+		display: flex;
+		flex-direction: column;
+		height: 75%;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+
+		.theme-number {
+			color: white;		
+			font-size: 130%;
+			font-family: ikaros;
+            opacity: 0.47;
+            transition: opacity 1s ease-in-out;
+            user-select: none;
+		}
+		
+	  }
     }
 
     /* social media */
@@ -303,7 +349,7 @@
         position: absolute;
         bottom: 20px;
         padding: 10px;
-        right: 300px;
+        right: calc(6% + 24px);
     }
 
     .social-icon{
@@ -317,7 +363,7 @@
     #days-countdown{
         position: absolute;
         bottom: 20px;
-        padding: 10px;
+        padding-left: 20px;
         font-size: 24px;
         font-family: "ikaros";
         color: #ffffff;
@@ -393,5 +439,43 @@
 
     .college-placeholder{
         color:  #000000 !important;
+    }
+}
+
+@media all and ( max-height: 600px ) and ( orientation: landscape ) {
+    #days-countdown {
+        bottom: 3px;
+        font-size: 12px;
+    }
+    #social-media {
+        bottom: 3px;
+        padding-bottom: 0;
+    }
+    .social-icon {
+        width: 20px;
+        margin: 0 5px 0 5px;
+    }
+    .home-heading {
+        padding-bottom: 0;
+    }
+    .home-content, .about-content, .contact-content {
+        font-size: 80%;
+    }
+
+    .theme-number {
+        font-size: 75% !important;
+    }
+
+    .home-teaser {
+        font-size: 80%;
+		margin-top: 0;
+    }
+
+    .video-img {
+        font-size: 75%;
+    }
+
+    .contact-heading, .about-heading {
+        font-size: 100%;
     }
 }

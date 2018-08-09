@@ -13,8 +13,7 @@ config = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "bundle.js",
 	},
-	devtool: 'inline-source-map',
-	mode: 'development',
+	mode: 'production', 
 	devServer: {
 		contentBase: './dist',
 	},
@@ -34,8 +33,9 @@ config = {
 				test: /\.scss$/,
 				use: [
 					"style-loader", // creates style nodes from JS strings
-					"css-loader?sourceMap", // translates CSS into CommonJS
-					"sass-loader?sourceMap" // compiles Sass to CSS
+					"css-loader", // translates CSS into CommonJS
+					"postcss-loader", //Uses the PostCSS config
+					"sass-loader" // compiles Sass to CSS
 				]
 			},
 			{
@@ -65,8 +65,16 @@ config = {
 		//new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
-			inject: 'body'
+			inject: 'body',
+			minify: {
+				removeComments: true,
+    			collapseWhitespace: true,
+    			conservativeCollapse: false,
+				preserveLineBreaks: false,
+				minifyCSS: true
+			}
 		}),
+		new UglifyJSPlugin(),
 	],
 }
 

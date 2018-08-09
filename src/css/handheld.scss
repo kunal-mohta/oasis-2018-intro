@@ -1,18 +1,265 @@
 /* handhelds */
 @media all and ( max-width: 600px ) {
+	$nav-height: 10%;
+	$firstThemeColor: #2D8ED8;
+
+
     .main-container {
         height: 100%;
         width: 100%;
-        border: solid 1px black;
+	}
+
+	// .main-container::after {
+	// 	/* properties relative to main-container */
+	// 	content: "";
+	// 	height: $nav-height;
+	// 	width: 100%;
+	// 	background: #000;
+	// 	position: absolute;
+	// 	bottom: 0;
+	// }
+
+	// .main-container::before {
+	// 	/* properties relative to main-container */
+	// 	content: "";
+	// 	height: 15%;
+	// 	width: 100%;
+	// 	background: linear-gradient(to top, #000, rgba(0,0,0,0));
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	z-index: 2;
+	// }
+
+	.main-container-background {
+		background-position: 65% 0;
+		background-repeat: no-repeat;
+		transform: rotateZ(180deg);
+	}
+
+	/* navigation */
+	#nav {
+		height: $nav-height;
+		width: 100%;
+		background: #000;
+  	}
+  
+  	#nav::after {
+		/* properties relative to nav */
+		content: "";
+		height: 100%;
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		background: linear-gradient(to bottom, #000, rgba(0,0,0,0));
+  }
+
+	#ham-icon {
+		height: 50%;
+		position: absolute;
+		right: 0;
+		margin: 5%;
+		z-index: 999;
+	}
+
+	#nav-list {
+		display: none;
+	}
+
+	#mobile-nav-page {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		font-size: 150%;
+		z-index: 5;
+		color: white;
+		display: none;
+		overflow-y: auto;
+	  }
+
+	#mobile-nav-page-filter {
+		position: absolute;
+		top: -10%;
+		right: -10%;
+		height: 1vh;
+		width: 1vh;
+		border-radius: 100%;
+		background: rgba(0,0,0,0.32);
+		transform-origin: 50% 50%;
+		transition: transform 0.1s linear;
+	}
+
+	#mobile-nav-list {
+		position: absolute;
+		padding: 0;
+		top: 10%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: "ikaros";
+		list-style: none;
+	}
+
+	#mobile-nav-list li {
+		padding: 5% 0;
+		opacity: 0;
+	}
+
+	.mobile-nav-selected {
+		color: $firstThemeColor;
+	}
+
+	#close-icon {
+		position: absolute;
+		right: 0;
+		margin: 5%;
+		height: 0.5 * $nav-height;
     }
+
+    #logo {
+        justify-content: center;
+		margin-left: 5%;
+		padding-top: 5px;
+	}
+
+	/* main body */
+	#main-body {
+		position: absolute;
+		top: $nav-height;
+		height: 75%;
+		width: 100%;
+		color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	.content-page:not(#home) {
+        display: none;
+	}
+	
+	/* home */
+	.home-heading{
+		font-size: 13vw;
+		text-align: center;
+		color: #ffffff;
+		margin-top: 20px;
+	}
+
+	.home-content{
+		display: none;
+	}
+
+	.home-teaser{
+		font-family: 'Roboto', sans-serif;
+		font-size: 5vw;
+		text-align: center;
+		font-weight: bolder;
+	}
+
+	/* about */
+	.about-heading{
+		font-family: "ikaros";
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.about-content{
+        font-size: 4.5vw;
+		font-family: 'Roboto', sans-serif;   
+		color: #ffffff;     
+    }
+
+    .about-content p{
+        margin: 5px 10px 10px 10px;
+    }
+
+    .about-download{
+        font-family: "productSans"; /*change font here*/
+        font-size: 27px;
+        margin: 50px 10px 0px 10px;
+        padding: 5px;
+		cursor: pointer;
+		text-align: center;
+		z-index: 3;
+    }
+
+    /*videos*/
+    .videos-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.videos-content, .overlay-video {
+		display: none;
+	}
+	.videos-content-mob {
+		font-family: "ikaros", sans-serif;
+		font-size: 7.5vw;
+		margin-top: 2vh;
+		text-align: center;
+		font-weight: 10;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.img-heading-mob {
+		margin-top: 6vh;
+		margin-bottom: 2vh;
+	}
+	.youtube-video {
+		height: 25vh;
+		width: 70vw;
+	}
+	.youtube-video iframe {
+		width: 100%;
+		height: 100%;
+	}
+	/*contact us*/
+	.contact-heading{
+		font-family: "ikaros", sans-serif;
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.contact-content {
+		font-family: "Roboto", sans-serif;
+		text-align: center;
+		margin-top: 2vh;
+	}
+
+	/* sub theme scroll */
+
+	/* social media */
+	#social-media{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+		right: 10px;
+		z-index: 3;
+    }
+
+    .social-icon{
+        width: 20px;
+        margin: 0 12px 0 12px;
+		cursor: pointer;
+    }
+
+	/* days countdown */
+	#days-countdown{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        font-size: 20px;
+		font-family: "ikaros";
+		z-index: 3;
+        color: #ffffff;
+	}
+
+	#theme-scroll {
+		display: none;
+	}
 }
-
-/* navigation */
-
-/* main body */
-
-/* sub theme scroll */
-
-/* social media */
-
-/* days countdown */

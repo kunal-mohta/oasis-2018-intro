@@ -1,14 +1,32 @@
 "use strict";
 
+// loader
+let loaderWrapper = document.getElementById("loader-wrapper");
+let mainLoader = document.getElementById("main-loader");
+let oasisTitle = document.getElementsByClassName("oasis-li");
+let oasisSlogan = document.getElementById("oasis-slogan");
+let oasisText = document.getElementById("oasis-text");
+let oasisDate = document.getElementById("oasis-date");
+window.onload = function () {
+	for(let i=0; i<oasisTitle.length; i++)
+		oasisTitle[i].classList.add("title-smoke");
+	oasisSlogan.classList.add("slogan-fade-in");
+	loaderWrapper.classList.add("wrapper-fade-out");
+	mainLoader.classList.add("loader-transition");
+	oasisText.classList.add("text-fade-out");
+	oasisDate.classList.add("text-fade-out");
+	setTimeout(function() {loaderWrapper.style.display = "none";}, 3500);
+};
+
 //teaser
 document.getElementsByClassName("home-teaser")[0].addEventListener("click", function(){
 	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
 }); 
 
 //brochure
-document.getElementsByClassName("about-download")[0].addEventListener("click", function(){
-	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
-}); 
+// document.getElementsByClassName("about-download")[0].addEventListener("click", function(){
+// 	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
+// }); 
 
 //days to go
 var DDay =  "2018-10-27";
