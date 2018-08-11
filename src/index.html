@@ -1256,6 +1256,8 @@
             }
         }
     </style>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -1476,16 +1478,20 @@
 					<form id = "prereg-form">
 						<input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" />
 						<select name = "college" id = "prereg-input-college" >
-							<option value="" class="college-placeholder"hidden>COLLEGE NAME</option>
-							<option value="aa">aa</option>
-						</select>
+							<option selected value="" class="college-placeholder" hidden>COLLEGE NAME</option>
+                            <option value = "other">OTHER</option>
+                            <option value = "aa">aa</option>
+                            <option value = "ab">ab</option>
+                        </select>
+                        <input type = "text" name = "college-other" id = "prereg-input-college-other" placeholder="OTHER COLLEGE"/>
 						<input type = "text" name = "email" id = "prereg-input-email" placeholder="EMAIL" />
 						<input type = "number" name = "phone" id = "prereg-input-phone" placeholder="PHONE" />
 
-						<div class="g-recaptcha" data-sitekey="6LfaPmgUAAAAALkroPo1ZXg69_aEdAJiV4v74YQU"></div>
 						<div id = "prereg-submit-wrapper">
 							<button id = "prereg-submit">SUBMIT</button>
-						</div>
+                        </div>
+
+                        <div class="g-recaptcha" data-sitekey="6Lc1HmkUAAAAAFkkY1KZYFAtKdDVqtrYnWPwDvo0"></div>
 					</form>
 				</div>
 

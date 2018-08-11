@@ -1,52 +1,62 @@
+import Axios from "axios";
+
 let prergOverlay = document.getElementById("prereg-msg-overlay"),
-    preregMsg = document.getElementById("prereg-msg");
+    preregMsg = document.getElementById("prereg-msg"),
+    preregClg = document.getElementById("prereg-input-college"),
+    preregClgOther = document.getElementById("prereg-input-college-other"),
+    preregForm = document.getElementById("prereg-form");
 
-// var axios = require("axios");
-// var URL = "https://bits-oasis.org/registration/intro/";
+const URL = "https://bits-oasis.org/2018/registrations/intro/";
 
-// window.onload(function(e){
-// // $.ajax({
-// //     type: 'GET',
-// //     url: URL,
-// //     dataType: 'json',
-// //     success: function (data) {
-// //         $.each(data.aaData,function(i,obj)
-// //         {
-// //          var div_data=('<option value='+obj.num+'>'+obj.college+'</option>');
-// //         $(div_data).appendTo('#prereg-input-college'); 
-// //         });  
-// //         }
-// //   }); 
+Axios(
+    {
+        method:'get',
+        url: URL,
+    }
+)
+.then(
+    (response) => {
+        console.log(response);
+        // let i=0;
+        // while(response.data){
+        //     let newOption = document.createElement("option");
+        //     newOption.setAttribute("value", i)
+        //     newOption.inn
+        //     document.getElementById('prereg-input-college').appendChild(newOption);
+        //     i++;
+        // }
+    }
+)
+.catch(
+    (error) => {
+        console.log(error);
+    }
+);
 
-//     e.preventDefault();
-// });
+preregClg.addEventListener("change", function () {
+    otherClgControl();
+});
 
-// axios({
-//     method:'get',
-//     url: URL,
-// })
-// .then(function(response) {
-//     console.log(response);
-//     var i=0;
-//     while(response.data){
-//         var div_data=('<option value='+i+'>'+response.data.college+'</option>');
-//         document.getElementById('prereg-input-college').appendChild(div_data);
-//         i++;
-//     }
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });
+// display "OTHER COLLEGE" field only when "other" is selected
+function otherClgControl() {
+    if (preregClg.value === "other") {
+        preregClgOther.style.display = "block";
+    }
+    else {
+        preregClgOther.style.display = "none";
+    }
+}
 
-document.getElementById("prereg-form").onsubmit = function registerForm(f)
+preregForm.onsubmit = function registerForm(f)
 {
     let name = document.getElementById("prereg-input-name").value;
     let college = document.getElementById("prereg-input-college").value;    
     let email = document.getElementById("prereg-input-email").value;
     let phone = document.getElementById("prereg-input-phone").value;
+    let otherCollege = document.getElementById("prereg-input-college-other").value;
 
     let inputArray = [name, college, email, phone];
-    
+
     if ( !areFieldBlank(trimInput(inputArray)) ) {
         // no field is empty
 
@@ -56,6 +66,44 @@ document.getElementById("prereg-form").onsubmit = function registerForm(f)
             if ( validatePhoneNumber(phone) ) {
                 // correct phone number format
 
+                let collegeName;
+
+                if (college === "other") {
+                    // "other" option selected for college
+
+                    if (areFieldBlank(trimInput([otherCollege]))) {
+                        // other college field empty
+
+                        openPreregDialogMsg("Please enter a college name");
+                    }
+                    else {
+                        // other college field filled
+
+                        collegeName = otherCollege;
+                    }
+                }
+                else {
+                    // college selected from drop down
+
+                    collegeName = college;
+                }
+
+                if (collegeName) {
+                    // some college name found
+
+                    let reCaptacha = checkReCaptacha();
+
+                    if (reCaptacha) {
+                        // recaptcha completed
+
+                        submitData(name, collegeName, email, phone, reCaptacha);
+                    }
+                    else {
+                        // recaptcha challenge not completed
+
+                        openPreregDialogMsg("Please validate the reCaptacha");
+                    }
+                }
             }
             else {
                 // incorrect phone number format
@@ -77,6 +125,44 @@ document.getElementById("prereg-form").onsubmit = function registerForm(f)
 
     f.preventDefault();
 };
+
+function submitData (name, college, email, phone, reCaptacha) {
+    let requestBody = {
+        "name": name,
+        "college": college,
+        "email": email,
+        "phone": phone,
+        "g-recaptcha-response": reCaptacha
+    };
+
+    console.log(reCaptacha);
+
+    Axios(
+        {
+            method: "post",
+            url: URL,
+            data: requestBody
+        }
+    )
+    .then(
+        (response) => {
+            console.log(response);
+        }
+    )
+    .catch(
+        (error) => {
+            console.log(error);
+        }
+    )
+}
+
+function checkReCaptacha () {
+    let reCaptchaVal = preregForm.elements[preregForm.elements.length - 1].value;
+
+    if (reCaptchaVal) {
+        return reCaptchaVal;
+    }
+}
 
 function validatePhoneNumber (num) {
     let phoneNumRegex = /^[0-9]{10}$/;
