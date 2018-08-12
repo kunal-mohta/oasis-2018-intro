@@ -28,6 +28,11 @@ html, body {
     overflow: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-wrapper {
     position: absolute;
     height: 100vh;
@@ -42,7 +47,6 @@ html, body {
 	width: 100%;
 	position: absolute;
     top: 0;
-    padding-left: 10px;
 }
 
 .main-container-background {

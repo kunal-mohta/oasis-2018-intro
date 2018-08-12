@@ -131,7 +131,8 @@
 		width: 100%;
 		color: white;
 		overflow-y: auto;
-		overflow-x: hidden;
+        overflow-x: hidden;
+        text-align: center;
 	}
 
 	.content-page:not(#home) {
@@ -237,8 +238,8 @@
 	#social-media{
         position: absolute;
         bottom: 20px;
-        padding: 10px;
-		right: 10px;
+        padding-bottom: 10px;
+		right: 0px;
 		z-index: 3;
     }
 

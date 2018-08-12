@@ -19,9 +19,9 @@ window.onload = function () {
 };
 
 //teaser
-document.getElementsByClassName("home-teaser")[0].addEventListener("click", function(){
-	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
-}); 
+// document.getElementsByClassName("home-teaser")[0].addEventListener("click", function(){
+// 	window.location = "https://www.youtube.com/watch?v=oWDZY6y7ED8";
+// }); 
 
 //brochure
 // document.getElementsByClassName("about-download")[0].addEventListener("click", function(){
@@ -47,13 +47,13 @@ else
 
 
 //social media
-var social = document.getElementsByClassName("social-icon");
-social[0].addEventListener("click", function(){
-	window.location = "https://www.facebook.com/oasis.bitspilani/";
-});
-social[1].addEventListener("click", function(){
-	window.location = "https://www.instagram.com/bitsoasis/?hl=en";
-});
-social[2].addEventListener("click", function(){
-	window.location = "https://twitter.com/bitsoasis?lang=en";
-});
+// var social = document.getElementsByClassName("social-icon");
+// social[0].addEventListener("click", function(){
+// 	window.location = "https://www.facebook.com/oasis.bitspilani/";
+// });
+// social[1].addEventListener("click", function(){
+// 	window.location = "https://www.instagram.com/bitsoasis/?hl=en";
+// });
+// social[2].addEventListener("click", function(){
+// 	window.location = "https://twitter.com/bitsoasis?lang=en";
+// });
