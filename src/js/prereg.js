@@ -3,11 +3,12 @@ import Axios from "axios";
 let prergOverlay = document.getElementById("prereg-msg-overlay"),
     preregMsg = document.getElementById("prereg-msg"),
     preregClg = document.getElementById("prereg-input-college"),
-    preregClgOther = document.getElementById("prereg-input-college-other"),
     preregForm = document.getElementById("prereg-form");
 
 const URL = "https://bits-oasis.org/2018/registrations/intro/";
+// const URL = "http://172.20.10.5:8000/registrations/intro/";
 
+/* College List */
 Axios(
     {
         method:'get',
@@ -16,44 +17,48 @@ Axios(
 )
 .then(
     (response) => {
-        console.log(response);
-        // let i=0;
-        // while(response.data){
-        //     let newOption = document.createElement("option");
-        //     newOption.setAttribute("value", i)
-        //     newOption.inn
-        //     document.getElementById('prereg-input-college').appendChild(newOption);
-        //     i++;
-        // }
+        if (response.status === 200) {
+            let collegeArray = response.data;
+
+            collegeArray.forEach(
+                college => {
+                    let newOption = document.createElement("option");
+                    newOption.setAttribute("value", college.name);
+                    newOption.innerHTML = college.name;
+
+                    preregClg.appendChild(newOption);
+                }
+            )
+        }
     }
 )
 .catch(
     (error) => {
         console.log(error);
+        openPreregDialogMsg("Error ocurred! Please try again later");
     }
 );
 
-preregClg.addEventListener("change", function () {
-    otherClgControl();
-});
+// preregClg.addEventListener("change", function () {
+//     otherClgControl();
+// });
 
-// display "OTHER COLLEGE" field only when "other" is selected
-function otherClgControl() {
-    if (preregClg.value === "other") {
-        preregClgOther.style.display = "block";
-    }
-    else {
-        preregClgOther.style.display = "none";
-    }
-}
+// // display "OTHER COLLEGE" field only when "other" is selected
+// function otherClgControl() {
+//     if (preregClg.value === "other") {
+//         preregClgOther.style.display = "block";
+//     }
+//     else {
+//         preregClgOther.style.display = "none";
+//     }
+// }
 
 preregForm.onsubmit = function registerForm(f)
 {
     let name = document.getElementById("prereg-input-name").value;
-    let college = document.getElementById("prereg-input-college").value;    
+    let college = document.getElementById("prereg-input-college").value;
     let email = document.getElementById("prereg-input-email").value;
     let phone = document.getElementById("prereg-input-phone").value;
-    let otherCollege = document.getElementById("prereg-input-college-other").value;
 
     let inputArray = [name, college, email, phone];
 
@@ -66,29 +71,29 @@ preregForm.onsubmit = function registerForm(f)
             if ( validatePhoneNumber(phone) ) {
                 // correct phone number format
 
-                let collegeName;
+                // let collegeName;
 
-                if (college === "other") {
-                    // "other" option selected for college
+                // if (college === "other") {
+                //     // "other" option selected for college
 
-                    if (areFieldBlank(trimInput([otherCollege]))) {
-                        // other college field empty
+                //     if (areFieldBlank(trimInput([otherCollege]))) {
+                //         // other college field empty
 
-                        openPreregDialogMsg("Please enter a college name");
-                    }
-                    else {
-                        // other college field filled
+                //         openPreregDialogMsg("Please enter a college name");
+                //     }
+                //     else {
+                //         // other college field filled
 
-                        collegeName = otherCollege;
-                    }
-                }
-                else {
-                    // college selected from drop down
+                //         collegeName = otherCollege;
+                //     }
+                // }
+                // else {
+                //     // college selected from drop down
 
-                    collegeName = college;
-                }
+                //     collegeName = college;
+                // }
 
-                if (collegeName) {
+                // if (collegeName) {
                     // some college name found
 
                     let reCaptacha = checkReCaptacha();
@@ -96,14 +101,14 @@ preregForm.onsubmit = function registerForm(f)
                     if (reCaptacha) {
                         // recaptcha completed
 
-                        submitData(name, collegeName, email, phone, reCaptacha);
+                        submitData(name, college, email, phone, reCaptacha);
                     }
                     else {
                         // recaptcha challenge not completed
 
                         openPreregDialogMsg("Please validate the reCaptacha");
                     }
-                }
+                // }
             }
             else {
                 // incorrect phone number format
@@ -130,8 +135,8 @@ function submitData (name, college, email, phone, reCaptacha) {
     let requestBody = {
         "name": name,
         "college": college,
-        "email": email,
-        "phone": phone,
+        "email_id": email,
+        "mobile_no": phone,
         "g-recaptcha-response": reCaptacha
     };
 
@@ -146,12 +151,40 @@ function submitData (name, college, email, phone, reCaptacha) {
     )
     .then(
         (response) => {
-            console.log(response);
+            if (response.status === 200) {
+                console.log(response.data.x_status);
+                switch (response.data.x_status) {
+                    case 0: // invalid recaptcha
+                            openPreregDialogMsg(response.data.message);
+                            break;
+
+                    case 999: // hackerman
+                            openPreregDialogMsg(response.data.message);
+                            break;
+
+                    case 2: // email already registered
+                            openPreregDialogMsg(response.data.message);
+                            break;
+
+                    case 3: // incorrect mobile number
+                            openPreregDialogMsg(response.data.message);
+                            break;
+
+                    case 4: // data is missing
+                            openPreregDialogMsg(response.data.message);
+                            break;
+
+                    default: // no error
+                            openPreregDialogMsg(response.data.message);
+                            break;
+                }
+            }
         }
     )
     .catch(
         (error) => {
-            console.log(error);
+            console.log(error.response);
+            openPreregDialogMsg("Error ocurred! Please try again later");
         }
     )
 }
