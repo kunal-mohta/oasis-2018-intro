@@ -3,7 +3,8 @@ import Axios from "axios";
 let prergOverlay = document.getElementById("prereg-msg-overlay"),
     preregMsg = document.getElementById("prereg-msg"),
     preregClg = document.getElementById("prereg-input-college"),
-    preregForm = document.getElementById("prereg-form");
+    preregForm = document.getElementById("prereg-form"),
+    preregSubmit = document.getElementById("prereg-submit");
 
 const URL = "https://bits-oasis.org/2018/registrations/intro/";
 // const URL = "http://172.20.10.5:8000/registrations/intro/";
@@ -55,6 +56,10 @@ Axios(
 
 preregForm.onsubmit = function registerForm(f)
 {
+
+    // disable submit button
+    disableSubmitButton();
+
     let name = document.getElementById("prereg-input-name").value;
     let college = document.getElementById("prereg-input-college").value;
     let email = document.getElementById("prereg-input-email").value;
@@ -107,6 +112,8 @@ preregForm.onsubmit = function registerForm(f)
                         // recaptcha challenge not completed
 
                         openPreregDialogMsg("Please validate the reCaptacha");
+
+                        enableSubmitButton();
                     }
                 // }
             }
@@ -114,18 +121,24 @@ preregForm.onsubmit = function registerForm(f)
                 // incorrect phone number format
 
                 openPreregDialogMsg("Please enter a correct phone number");
+
+                enableSubmitButton();
             }
         }
         else {
             // incorrect email format
 
             openPreregDialogMsg("Please enter a correct email address");
+
+            enableSubmitButton();
         }
     }
     else {
         // one or more of the fields is blank
 
         openPreregDialogMsg("Please fill all the fields");
+
+        enableSubmitButton();
     }
 
     f.preventDefault();
@@ -179,12 +192,16 @@ function submitData (name, college, email, phone, reCaptacha) {
                             break;
                 }
             }
+
+            enableSubmitButton();
         }
     )
     .catch(
         (error) => {
             console.log(error.response);
             openPreregDialogMsg("Error ocurred! Please try again later");
+
+            enableSubmitButton();
         }
     )
 }
@@ -195,6 +212,16 @@ function checkReCaptacha () {
     if (reCaptchaVal) {
         return reCaptchaVal;
     }
+}
+
+function disableSubmitButton () {
+    preregSubmit.disabled = true;
+    preregSubmit.classList.add("disabled-button");
+}
+
+function enableSubmitButton () {
+    preregSubmit.disabled = false;
+    preregSubmit.classList.remove("disabled-button");
 }
 
 function validatePhoneNumber (num) {
