@@ -90,6 +90,10 @@
         z-index: 999;
     }
 
+    .content-page {
+        padding-left: 10px;
+    }
+
     .content-page:not(#home) {
         display: none;
     }

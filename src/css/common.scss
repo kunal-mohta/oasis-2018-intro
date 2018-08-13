@@ -32,6 +32,11 @@ html, body {
     visibility: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-wrapper {
     position: absolute;
     height: 100vh;
