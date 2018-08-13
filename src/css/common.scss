@@ -28,6 +28,10 @@ html, body {
     overflow: hidden;
 }
 
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -40,6 +44,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/* captcha */
+.g-recaptcha{
+    padding: 20px;
 }
 
 .content-page {
@@ -104,3 +112,85 @@ a {
 /* social media */
 
 /* days countdown */
+
+/* prereg */
+.prereg-heading {
+    font-family: "ikaros";
+    color: $firstThemeColor;
+}
+
+#prereg-msg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+#prereg-msg-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'productSans', sans-serif;
+    font-size: 200%;
+    background: white;
+}
+
+#close-prereg-msg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 5px 0 0;
+    height: 10%;
+}
+
+#close-prereg-msg:hover {
+    cursor: pointer;
+}
+
+#prereg-form {
+    input, #prereg-input-college {
+        background: rgba(0,0,0,0);
+        border: none;
+        border-bottom: solid 2px #d0d0d0;
+        margin-top: 30px;
+        width: 90%;
+        color: #fff;
+        padding: 10px;
+    }
+
+    #prereg-submit-wrapper {
+        margin-top: 30px;
+
+        #prereg-submit {
+            -webkit-appearance: none;
+            color: #000;
+            background: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}
+
+#prereg-form input:focus {
+    border-bottom: solid 2px #fff;
+}
+
+#prereg-input-college-other {
+    display: none;
+}
+
+#prereg-input-college option {
+    color: black;
+}
+
+.disabled-button:hover {
+    cursor: wait !important;
+}
