@@ -9,6 +9,10 @@
         width: 100%;
 	}
 
+	.heading {
+		margin-top: 20px;
+	}
+
 	// .main-container::after {
 	// 	/* properties relative to main-container */
 	// 	content: "";
@@ -141,6 +145,10 @@
 		transition: opacity 0.2s ease-in-out;
 	}
 
+	#main-body, .content-page {
+		overflow-x: hidden;
+	}
+
 	.content-page:not(#home) {
         display: none;
 	}
@@ -150,7 +158,6 @@
 		font-size: 13vw;
 		text-align: center;
 		color: #ffffff;
-		margin-top: 20px;
 	}
 
 	.home-content{
@@ -204,7 +211,6 @@
 	.videos-content-mob {
 		font-family: "ikaros", sans-serif;
 		font-size: 7.5vw;
-		margin-top: 2vh;
 		text-align: center;
 		font-weight: 10;
 		display: flex;
@@ -213,7 +219,7 @@
 		align-items: center;
 	}
 	.img-heading-mob {
-		margin-top: 6vh;
+		margin-top: 2vh;
 		margin-bottom: 2vh;
 	}
 	.youtube-video {
