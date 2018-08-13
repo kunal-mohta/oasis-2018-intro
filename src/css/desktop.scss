@@ -94,6 +94,11 @@
         display: none;
     }
 
+    .content-page {
+        overflow-y: auto;
+        padding-left: 10px;
+    }
+
     /*home*/
     .home-heading{
         font-size: 5vw;
@@ -267,9 +272,6 @@
     }
 
     /*contacts*/
-    .content-page {
-        overflow-y: auto;
-    }
 
     .contact-heading{
         font-family: "ikaros"; /*change font here*/
@@ -383,22 +385,8 @@
     }
 
     .prereg-heading {
-        font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 10px;
-        color: #2D8ED8;
-    }
-
-    #prereg-form {
-        input {
-            background: rgba(0,0,0,0);
-            border: none;
-            border-bottom: solid 2px #d0d0d0;
-            margin: 30px 0 0 10px;
-            width: 90%;
-            color: #fff;
-            padding: 10px;
-        }
     }
 
     #prereg-submit-wrapper {
@@ -409,11 +397,7 @@
     }
 
     #prereg-submit {
-        color: #000;
-        background: #fff;
         width: 15%;
-        text-align: center;
-        font-weight: bold;
         padding: 15px 0;
         transition: transform 0.1s linear;
     }
@@ -421,20 +405,6 @@
     #prereg-submit:hover {
         cursor: pointer;
         transform: scale(1.1);
-    }
-
-    #prereg-form input:focus {
-        border-bottom: solid 2px #fff;
-    }
-
-    #prereg-input-college{
-        background: rgba(0,0,0,0);
-        border: none;
-        border-bottom: solid 2px #d0d0d0;
-        margin: 30px 0 0 10px;
-        width: 90%;
-        color: #ffffff;
-        padding: 10px 5px 10px;
     }
 
     .college-placeholder{

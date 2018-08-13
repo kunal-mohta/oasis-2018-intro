@@ -50,7 +50,6 @@ html, body {
 	width: 100%;
 	position: absolute;
     top: 0;
-    padding-left: 10px;
 }
 
 .main-container-background {
@@ -76,6 +75,43 @@ html, body {
 .theme-color-text {
     color: $firstThemeColor;
     transition: color 0.5s linear;
+}
+
+/* navigation */
+#nav {
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+#logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 80%;
+    }
+}
+
+/* main body */
+
+/* home */
+.home-heading {
+    font-family: "vtks";
+}
+
+/* sub theme scroll */
+
+/* social media */
+
+/* days countdown */
+
+/* prereg */
+.prereg-heading {
+    font-family: "ikaros";
+    color: $firstThemeColor;
 }
 
 #prereg-msg-overlay {
@@ -114,6 +150,34 @@ html, body {
     cursor: pointer;
 }
 
+#prereg-form {
+    input, #prereg-input-college {
+        background: rgba(0,0,0,0);
+        border: none;
+        border-bottom: solid 2px #d0d0d0;
+        margin-top: 30px;
+        width: 90%;
+        color: #fff;
+        padding: 10px;
+    }
+
+    #prereg-submit-wrapper {
+        margin-top: 30px;
+
+        #prereg-submit {
+            -webkit-appearance: none;
+            color: #000;
+            background: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}
+
+#prereg-form input:focus {
+    border-bottom: solid 2px #fff;
+}
+
 #prereg-input-college-other {
     display: none;
 }
@@ -125,34 +189,3 @@ html, body {
 .disabled-button:hover {
     cursor: wait !important;
 }
-
-/* navigation */
-#nav {
-	position: absolute;
-	top: 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-#logo {
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    img {
-        height: 80%;
-    }
-}
-
-/* main body */
-
-/* home */
-.home-heading {
-    font-family: "vtks";
-}
-
-/* sub theme scroll */
-
-/* social media */
-
-/* days countdown */
