@@ -98,6 +98,11 @@
         display: none;
     }
 
+    .content-page {
+        overflow-y: auto;
+        padding-left: 10px;
+    }
+
     /*home*/
     .home-heading{
         font-size: 5vw;
@@ -271,9 +276,6 @@
     }
 
     /*contacts*/
-    .content-page {
-        overflow-y: auto;
-    }
 
     .contact-heading{
         font-family: "ikaros"; /*change font here*/
@@ -371,6 +373,51 @@
         font-size: 24px;
         font-family: "ikaros";
         color: #ffffff;
+    }
+
+    /* prereg */
+
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+
+    #prereg {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .prereg-heading {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    #prereg-submit-wrapper {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #prereg-submit {
+        width: 15%;
+        padding: 15px 0;
+        transition: transform 0.1s linear;
+    }
+
+    #prereg-submit:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .college-placeholder{
+        color:  #000000 !important;
+    }
+
+    #prereg-msg-container {
+        height: 50%;
+        width: 50%;
     }
 }
 

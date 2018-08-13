@@ -1256,6 +1256,8 @@
             }
         }
     </style>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -1315,6 +1317,12 @@
 
     <!-- content wrapper -->
     <div id="content-wrapper" class="main-wrapper">
+		<div id = "prereg-msg-overlay">
+			<div id = "prereg-msg-container">
+				<div id = "prereg-msg"></div>
+				<img id = "close-prereg-msg" src = "assets/imgs/close-prereg.svg" alt = "Close-Icon" />
+			</div>
+		</div>
         <div class="main-container">
 
 
@@ -1464,9 +1472,27 @@
                     <!-- <div class="about-download theme-color-text">Download the Brochure</div> -->
                 </div>
 
-                <div id="sponsors" class="content-page"></div>
+				<div id = "prereg" class = "content-page">
+					<div class = "prereg-heading theme-color-text">PreReg</div>
 
-                <div id="prereg" class="content-page"></div>
+					<form id = "prereg-form">
+						<input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" />
+						<select name = "college" id = "prereg-input-college" >
+							<option selected value="" class="college-placeholder" hidden>COLLEGE NAME</option>
+                        </select>
+                        <input type = "text" name = "college-other" id = "prereg-input-college-other" placeholder="OTHER COLLEGE"/>
+						<input type = "text" name = "email" id = "prereg-input-email" placeholder="EMAIL" />
+						<input type = "number" name = "phone" id = "prereg-input-phone" placeholder="PHONE" />
+
+						<div id = "prereg-submit-wrapper">
+							<button id = "prereg-submit">SUBMIT</button>
+                        </div>
+
+                        <div class="g-recaptcha" data-sitekey="6Lc1HmkUAAAAAFkkY1KZYFAtKdDVqtrYnWPwDvo0"></div>
+					</form>
+				</div>
+
+                <div id="sponsors" class="content-page"></div>
 
                 <div id="contact" class="content-page">
                     <div class="contact-heading theme-color-text">CONTACT US</div>
@@ -1544,6 +1570,7 @@
             <!-- days countdown -->
             <div id="days-countdown"></div>
         </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </div>
 
     <!-- <script src = "./js/tabNavigation.js"></script> -->

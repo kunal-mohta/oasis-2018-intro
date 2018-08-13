@@ -26,8 +26,11 @@ module.exports = {
             "always"
         ],
         "no-console": [
-            "warn"
+            "off"
         ],
+        "no-useless-escape": [
+            "off"
+        ]
     },
     "globals": {
         "module": false,

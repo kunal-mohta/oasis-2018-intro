@@ -262,5 +262,30 @@
 
 	#theme-scroll {
 		display: none;
-	}
+    }
+    
+    /* prereg */
+
+    .prereg-heading {
+        font-size: 7vw;
+        text-align: center;
+    }
+
+    #prereg-msg-container {
+        height: 50%;
+        width: 80%;
+        padding: 20px;
+    }
+
+    #prereg-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #prereg-submit {
+        width: 100%;
+        padding: 15px;
+    }
 }
