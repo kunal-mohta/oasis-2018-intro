@@ -102,8 +102,8 @@ function openMobileNav () {
 	mobileNavIcon.style.opacity = "0";
 
 	// adding transition to the appearance of nav list
-	let transitionDelay = 0.05,
-		transitionDuration = 0.05;
+	let transitionDelay = 0.1,
+		transitionDuration = 0.2;
 	document.querySelectorAll("#mobile-nav-list li").forEach(
 		(navItem) => {
 			navItem.style.transition = `opacity ${transitionDuration}s ${transitionDelay}s linear`;
@@ -114,6 +114,7 @@ function openMobileNav () {
 
 	// making things appear
 	mobileNavPage.style.display = "flex";
+	mobileNavPage.style.opacity = 1;
 	mobileNavPageFilter.style.transform = "scale(300)";
 
 	setTimeout(
@@ -131,7 +132,8 @@ function openMobileNav () {
 // close mobile navigation
 function closeMobileNav () {
 	// making things disappear
-	mobileNavPage.style.display = "none";
+	mobileNavPage.style.opacity = 0;
+	setTimeout(function() {mobileNavPage.style.display = "none";}, 250);
 	mobileNavPageFilter.style.transform = "scale(1)";
 
 	document.querySelectorAll("#mobile-nav-list li").forEach(

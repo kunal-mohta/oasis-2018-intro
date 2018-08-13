@@ -58,11 +58,14 @@
 		position: absolute;
 		right: 0;
 		margin: 5%;
-		z-index: 999;
 	}
 
 	#nav-list {
 		display: none;
+	}
+
+	#ham-icon, #close-icon, #mobile-nav-list li {
+		transition: opacity 0.2s ease-in-out;
 	}
 
 	#mobile-nav-page {
@@ -75,6 +78,8 @@
 		color: white;
 		display: none;
 		overflow-y: auto;
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
 	  }
 
 	#mobile-nav-page-filter {
@@ -132,7 +137,8 @@
 		color: white;
 		overflow-y: auto;
         overflow-x: hidden;
-        text-align: center;
+		text-align: center;
+		transition: opacity 0.2s ease-in-out;
 	}
 
 	.content-page:not(#home) {
