@@ -44,6 +44,10 @@
 		display: none;
 	}
 
+    #about-nav {
+        display: none !important;
+    }
+
     #nav-list {
         list-style: none;
         display: flex;
@@ -121,7 +125,7 @@
     .home-teaser{
         font-family: "ikaros"; /*change font here*/
         font-size: 130%;
-        margin: 30px 10px 0px 10px;
+        margin: 5px 10px 0px 10px;
         cursor: pointer;
     }
 
@@ -135,7 +139,7 @@
 
     .about-content{
         color: black; /*to be changes to white later*/
-        font-size: 16px;
+        font-size: 120%;
         font-family: 'Roboto', sans-serif;
         color: #ffffff;
     }
@@ -277,13 +281,13 @@
 
     /*contacts*/
 
-    .contact-heading{
+    .contact-heading, .sponsors-heading, .heading {
         font-family: "ikaros"; /*change font here*/
         font-size: 25px;
         padding: 20px 0 0 10px;
     }
 
-    .contact-content{
+    .contact-content, .sponsors-content{
         font-family: "roboto", sans-serif; /*change font here*/
         color: #fff;
         font-size: 110%;
@@ -386,11 +390,6 @@
 
     #prereg {
         font-family: 'Roboto', sans-serif;
-    }
-
-    .prereg-heading {
-        font-size: 25px;
-        padding: 10px;
     }
 
     #prereg-submit-wrapper {

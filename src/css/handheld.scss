@@ -185,7 +185,7 @@
     }
 
     .about-content p{
-        margin: 5px 10px 10px 10px;
+        margin: 5px 20px 10px 20px;
     }
 
     .about-download{
@@ -231,14 +231,14 @@
 		height: 100%;
 	}
 	/*contact us*/
-	.contact-heading{
+	.contact-heading, .sponsors-heading {
 		font-family: "ikaros", sans-serif;
 		font-size: 7vw;
 		text-align: center;
 		text-transform: uppercase;
 	}
 
-	.contact-content {
+	.contact-content, .sponsors-content {
 		font-family: "Roboto", sans-serif;
 		text-align: center;
 		margin-top: 2vh;
@@ -278,11 +278,6 @@
     
     /* prereg */
 
-    .prereg-heading {
-        font-size: 7vw;
-        text-align: center;
-    }
-
     #prereg-msg-container {
         height: 50%;
         width: 80%;
@@ -300,4 +295,7 @@
         width: 100%;
         padding: 15px;
     }
+}
+#about-nav {
+	display: flex;
 }
