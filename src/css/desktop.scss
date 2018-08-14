@@ -96,6 +96,7 @@
 
     .content-page {
         padding-left: 10px;
+        overflow-x: hidden;
     }
 
     .content-page:not(#home) {
@@ -455,5 +456,22 @@
 
     .contact-heading, .about-heading {
         font-size: 100%;
+    }
+
+    #prereg-form input, #prereg-form #prereg-input-college {
+        font-size: 10px;
+    }
+
+    #prereg-submit {
+        width: 20%;
+        padding: 10px 0;
+    }
+
+    #prereg-submit {
+        font-size: 10px;
+    }
+
+    .g-recaptcha {
+        transform: scale(0.77);
     }
 }

@@ -119,6 +119,10 @@ a {
     color: $firstThemeColor;
 }
 
+#prereg-msg {
+    text-align: center;
+}
+
 #prereg-msg-overlay {
     position: absolute;
     top: 0;
@@ -156,6 +160,10 @@ a {
 }
 
 #prereg-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     input, #prereg-input-college {
         background: rgba(0,0,0,0);
         border: none;
