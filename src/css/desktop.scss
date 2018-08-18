@@ -121,6 +121,12 @@
         font-size: 120%;
         padding: 10px;
         color: #ffffff;
+        padding-top: 0;
+    }
+    
+    .home-content p:first-child {
+        padding-top: 0;
+        margin-top: 0;
     }
 
     .home-teaser{
