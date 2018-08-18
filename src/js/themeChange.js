@@ -91,11 +91,13 @@ const themeChange = {
 						
 						if(k==5) {
 							document.getElementById("hot-container").style.display = "flex";
+							document.getElementById("hot-img").style.display = "block";
 							document.getElementById("hot-container").className = "hot-container-flicker";
-							document.getElementById("hot-img").className = "hot-image";
+							document.getElementById("hot-img").className = "hot-image-anim";
 							document.getElementById("main-body").style.zIndex = 1;
 							setTimeout(function(){
 								document.getElementById("hot-container").style.display = "none";
+								document.getElementById("hot-img").style.display = "none";
 								document.getElementById("hot-container").className = "";
 								document.getElementById("hot-img").className = "";
 								document.getElementById("main-body").style.zIndex = 999;

@@ -1,4 +1,69 @@
 /* desktop */
+#hot-container {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#hot-img {
+    display: none;
+}
+
+.hot-container-flicker {
+    animation: flicker-in 1.5s forwards;
+}
+
+.hot-image-anim {
+    animation: scaleImg 2s ease-in-out;
+}
+
+@keyframes scaleImg {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.5);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(2);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes flicker-in{
+    $steps:10;
+    $temp: false;
+    @for $i from 0 through floor(3/4 * $steps) {
+        #{percentage($i*(1/$steps))}{
+        @if($temp == true) {
+            opacity: random(50)/100;
+            $temp: false;
+        } @else {
+            opacity: random(50)/200 + 0.75;
+            $temp: true;
+        }
+        }
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @media all and ( min-width: 600px ), all and (orientation: landscape) {
     $firstThemeColor: #2D8ED8;
     $themeScrollWidth: 7%;
@@ -507,64 +572,4 @@
             height: 40px;
         }
     }
-}
-
-#hot-container {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.hot-container-flicker {
-    animation: flicker-in 1.5s forwards;
-}
-
-.hot-image {
-    animation: scaleImg 2s ease-in-out;
-}
-
-@keyframes scaleImg {
-    0% {
-        transform: scale(1);
-    }
-    20% {
-        transform: scale(1.5);
-    }
-    40% {
-        transform: scale(1);
-    }
-    60% {
-        transform: scale(2);
-    }
-    80% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes flicker-in{
-	$steps:10;
-	$temp: false;
-	@for $i from 0 through floor(3/4 * $steps) {
-		#{percentage($i*(1/$steps))}{
-		@if($temp == true) {
-			opacity: random(50)/100;
-			$temp: false;
-		} @else {
-			opacity: random(50)/200 + 0.75;
-			$temp: true;
-		}
-		}
-	}
-	100% {
-		opacity: 1;
-	}
 }
