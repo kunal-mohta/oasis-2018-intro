@@ -1,5 +1,5 @@
 /* desktop */
-@media all and ( min-width: 600px ) {
+@media all and ( min-width: 600px ), all and (orientation: landscape) {
     $firstThemeColor: #2D8ED8;
     $themeScrollWidth: 7%;
 
@@ -37,8 +37,10 @@
 
     #logo {
         padding-left: 20px;
-        padding-top: 10px;
-	}
+        img {
+            height: 60px;
+        }
+    }
 	
 	#mobile-nav-page {
 		display: none;
@@ -87,7 +89,7 @@
 
     /* main body */
     #main-body {
-        height: 75%;
+        height: 70%;
         width: 48%;
         position: absolute;
         top: 15%;
@@ -106,6 +108,7 @@
     .content-page {
         overflow-y: auto;
         padding-left: 10px;
+        top: 20px;
     }
 
     /*home*/
@@ -113,7 +116,6 @@
         font-size: 5vw;
         padding: 10px;
         color: #ffffff;
-        margin-top: 20px;
     }
 
     .home-content{
@@ -307,6 +309,10 @@
         overflow-y: auto;
     }
 
+    .contact-content {
+        align-items: flex-start;
+    }
+
     #contact {
         width: 84vw;
     }
@@ -493,5 +499,12 @@
 
     .g-recaptcha {
         transform: scale(0.77);
+    }
+}
+@media all and (min-width: 600px) and ( max-width: 800px ), all and (max-height: 500px) and (orientation: landscape) {
+    #logo {
+        img {
+            height: 40px;
+        }
     }
 }
