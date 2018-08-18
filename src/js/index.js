@@ -7,6 +7,7 @@ import "./themeChange";
 import "./home";
 import "./prereg";
 import "./video";
+import "./contact";
 // import "./glitch";
 
 // CSS Imports

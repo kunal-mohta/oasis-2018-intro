@@ -64,6 +64,11 @@ function navigateToTab (pageName) {
 	currentPage.navElem.classList.add("nav-selected");
 	currentPage.navElem.style.borderTop = `solid 5px ${theme.changes[0].colors[theme.currentThemeCounter]}`;
 	currentPage.navElem.style.color = `${theme.changes[0].colors[theme.currentThemeCounter]}`;
+
+	if (pageName==="contact")
+		document.getElementById("image-container").style.opacity = 0.5;
+	else
+		document.getElementById("image-container").style.opacity = 1;
 }
 
 /* END NAVIGATION FOR DESKTOP */
@@ -92,7 +97,7 @@ function mobileNavigateToTab (pageName) {
 	if (pageName==="home")
 		document.getElementById("image-container").style.opacity = 1;
 	else
-		document.getElementById("image-container").style.opacity = 0.3;
+		document.getElementById("image-container").style.opacity = 0.4;
 }
 
 // open mobile navigation

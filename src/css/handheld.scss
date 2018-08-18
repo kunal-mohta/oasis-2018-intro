@@ -11,6 +11,10 @@
 
 	.heading {
 		margin-top: 20px;
+		font-family: "ikaros";
+		font-size: 7vw;
+		text-align: center;
+		text-transform: uppercase;
 	}
 
 	// .main-container::after {
@@ -58,7 +62,6 @@
   }
 
 	#ham-icon {
-		height: 50%;
 		position: absolute;
 		right: 0;
 		margin: 5%;
@@ -123,7 +126,8 @@
 		position: absolute;
 		right: 0;
 		margin: 5%;
-		height: 0.5 * $nav-height;
+		margin-right: 5.5%;
+		height: 3%;
     }
 
     #logo {
@@ -236,6 +240,10 @@
 		font-size: 7vw;
 		text-align: center;
 		text-transform: uppercase;
+	}
+	
+	.stuccan {
+		margin-bottom: 20px;
 	}
 
 	.contact-content, .sponsors-content {

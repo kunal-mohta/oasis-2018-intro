@@ -194,3 +194,18 @@ a {
 .disabled-button:hover {
     cursor: wait !important;
 }
+
+.stuccan {
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.stuccanImg {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+}

@@ -300,6 +300,19 @@
         overflow-y: auto;
     }
 
+    #contact {
+        width: 84vw;
+    }
+
+    .contact-content {
+        justify-content: center;
+    }
+
+    .stuccan {
+        width: 15vw;
+        margin: 1.5vw;
+    }
+
     .contact-info {
         width: 40%;
         padding: 10px;
@@ -308,7 +321,7 @@
     /* sub theme scroll */
     #theme-scroll {
       height: 100%;
-      width: $themeScrollWidth;
+      width: 6vw;
       border-left: solid $firstThemeColor 5px;
       position: absolute;
       right: 0;
@@ -359,6 +372,7 @@
         position: absolute;
         bottom: 20px;
         padding: 10px;
+        padding-bottom: 0;
         right: calc(6% + 24px);
     }
 
