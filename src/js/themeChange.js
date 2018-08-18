@@ -77,7 +77,33 @@ const themeChange = {
 					div.appendChild(textNode);
 					themeScrollIW.appendChild(div);
 				}
-				const themeNumbers = document.getElementsByClassName("theme-number");	
+				const themeNumbers = document.getElementsByClassName("theme-number");
+				const a = [1, 4, 3, 1, 3];
+				let k = 0;
+				for(let i=0; i<themeNumbers.length; i++) {
+					themeNumbers[i].addEventListener("click", function () {
+						if(i+1==a[k]) {
+							k++;
+							console.log(k);
+						} else {
+							k=0;
+						}
+						
+						if(k==5) {
+							document.getElementById("hot-container").style.display = "flex";
+							document.getElementById("hot-container").className = "hot-container-flicker";
+							document.getElementById("hot-img").className = "hot-image";
+							document.getElementById("main-body").style.zIndex = 1;
+							setTimeout(function(){
+								document.getElementById("hot-container").style.display = "none";
+								document.getElementById("hot-container").className = "";
+								document.getElementById("hot-img").className = "";
+								document.getElementById("main-body").style.zIndex = 999;
+							}, 2100);
+							k=0;
+						}
+					});
+				}
 				themeNumbers[0].style.opacity = "1";
 			},
 			trigger: function(counter){
@@ -391,8 +417,6 @@ function init() {
 		setTimeout(function () { div.classList.remove("pseudoStyle" + afterPseudoCount); }, duration * 1000);
 
 	}
-
-
 }
 
 init();
