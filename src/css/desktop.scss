@@ -36,7 +36,7 @@
     }
 
     #logo {
-        padding-left: 20px;
+        padding-left: 30px;
         img {
             height: 60px;
         }
@@ -97,18 +97,14 @@
     }
 
     .content-page {
-        padding-left: 10px;
+        padding-left: 20px;
+        overflow-y: auto;
+        top: 20px;
         overflow-x: hidden;
     }
 
     .content-page:not(#home) {
         display: none;
-    }
-
-    .content-page {
-        overflow-y: auto;
-        padding-left: 10px;
-        top: 20px;
     }
 
     /*home*/
