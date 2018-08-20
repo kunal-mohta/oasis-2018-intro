@@ -12,6 +12,8 @@ let oasisTitle = document.getElementsByClassName("oasis-li");
 let oasisSlogan = document.getElementById("oasis-slogan");
 let oasisText = document.getElementById("oasis-text");
 let oasisDate = document.getElementById("oasis-date");
+let themeWrapper = document.getElementById("theme-wrapper");
+let contentWrapper = document.getElementById("content-wrapper");
 
 window.onload = function () {
 	for(let i=0; i<oasisTitle.length; i++)
@@ -20,7 +22,10 @@ window.onload = function () {
 	loaderWrapper.classList.add("wrapper-fade-out");
 	mainLoader.classList.add("loader-transition");
 	oasisText.classList.add("text-fade-out");
-	oasisDate.classList.add("text-fade-out");
+    oasisDate.classList.add("text-fade-out");
+    themeWrapper.style.display = "flex";
+    contentWrapper.style.display = "flex";
+
     setTimeout(function() {loaderWrapper.style.display = "none";}, 3500);
 
     /* College List (load after laoder ends)*/
