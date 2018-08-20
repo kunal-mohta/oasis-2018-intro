@@ -2,43 +2,11 @@ import Axios from "axios";
 
 let prergOverlay = document.getElementById("prereg-msg-overlay"),
 	preregMsg = document.getElementById("prereg-msg"),
-	preregClg = document.getElementById("prereg-input-college"),
 	preregForm = document.getElementById("prereg-form"),
 	preregSubmit = document.getElementById("prereg-submit");
 
 const URL = "https://bits-oasis.org/2018/registrations/intro/";
 // const URL = "http://172.20.10.5:8000/registrations/intro/";
-
-/* College List */
-Axios(
-	{
-		method: "get",
-		url: URL,
-	}
-)
-	.then(
-		(response) => {
-			if (response.status === 200) {
-				let collegeArray = response.data;
-
-				collegeArray.forEach(
-					college => {
-						let newOption = document.createElement("option");
-						newOption.setAttribute("value", college.name);
-						newOption.innerHTML = college.name;
-
-						preregClg.appendChild(newOption);
-					}
-				);
-			}
-		}
-	)
-	.catch(
-		(error) => {
-			console.log(error);
-			openPreregDialogMsg("Error ocurred! Please try again later");
-		}
-	);
 
 // preregClg.addEventListener("change", function () {
 //     otherClgControl();
@@ -215,12 +183,12 @@ function checkReCaptacha() {
 	}
 }
 
-function disableSubmitButton() {
+export function disableSubmitButton() {
 	preregSubmit.disabled = true;
 	preregSubmit.classList.add("disabled-button");
 }
 
-function enableSubmitButton() {
+export function enableSubmitButton() {
 	preregSubmit.disabled = false;
 	preregSubmit.classList.remove("disabled-button");
 }
@@ -254,7 +222,7 @@ function trimInput(vals) {
 	return vals;
 }
 
-function openPreregDialogMsg(msg) {
+export function openPreregDialogMsg(msg) {
 	prergOverlay.style.display = "flex";
 	preregMsg.innerHTML = msg;
 }
