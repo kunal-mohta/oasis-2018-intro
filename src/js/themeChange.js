@@ -84,7 +84,6 @@ const themeChange = {
 					themeNumbers[i].addEventListener("click", function () {
 						if(i+1==a[k]) {
 							k++;
-							console.log(k);
 						} else {
 							k=0;
 						}
