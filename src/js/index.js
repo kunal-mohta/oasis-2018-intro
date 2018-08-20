@@ -6,11 +6,11 @@ import "./tabNavigation";
 import "./themeChange";
 import "./home";
 import "./prereg";
-import "./video";
+// import "./video";
 import "./contact";
 // import "./glitch";
 
 // CSS Imports
 import "../css";
 
-import "./video";
+// import "./video";
