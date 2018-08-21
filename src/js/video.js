@@ -4,6 +4,12 @@ var player = document.getElementById("player");
 var video_wrapper_ext = document.getElementsByClassName("video-wrapper-ext")[0];
 var overlay_video = document.getElementsByClassName("overlay-video")[0];
 
+// var vidNames = ["Teaser 2018", "Aftermovie 2017", "Teaser 2017", "Aftermovie 2016"];
+
+// function vidAnalytics (vidName) {
+//     alert(vidName);
+// }
+
 js_overlay_start[0].addEventListener("click", function(e) {
 	e.preventDefault();
 	var src = this.getAttribute("data-url");
@@ -11,7 +17,7 @@ js_overlay_start[0].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-	}, 100);
+    }, 100);
 });
 
 js_overlay_start[1].addEventListener("click", function(e) {
@@ -21,7 +27,7 @@ js_overlay_start[1].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-	}, 100);
+    }, 100)
 });
 
 js_overlay_start[2].addEventListener("click", function(e) {
@@ -31,7 +37,7 @@ js_overlay_start[2].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-	}, 100);
+    }, 100);
 });
 
 js_overlay_start[3].addEventListener("click", function(e) {
@@ -41,7 +47,7 @@ js_overlay_start[3].addEventListener("click", function(e) {
 	setTimeout(function() {
 		overlay_video.classList.add("o1");
 		player.setAttribute("src", src);
-	}, 100);
+    }, 100);
 });
 
 
