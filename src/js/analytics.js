@@ -30,7 +30,6 @@ import axios from "axios";
 		const classEl = document.getElementsByClassName(className);
 		Array.from(classEl).forEach(el => {
 			el.addEventListener('click', () => {
-				console.log("clicked");
 				if(vidObj.watched) return;
 				vidObj.watched = true;
 				axios({
@@ -43,11 +42,14 @@ import axios from "axios";
 						"Access-Control-Allow-Origin": "*",
 						"Content-Type": "application/json"
 					}
-				}).then(response => {
-					console.log("here")
-					console.log(response)	
-				}).catch(err => console.log(err))
+				}).then(()=> {})
+					.catch(() => {})
 			});	
 		})
 	});
-})()
+})();
+
+
+(function homeScreenLog(){
+	
+})();
