@@ -54,8 +54,10 @@ import axios from "axios";
 
 	const apiRoot = "https://bits-oasis.org/2018/analytics/viewtimer/";
 	
-	let secondsUntilNavigate = -3.5;
-	window.addEventListener('load', () => setInterval(
+	const loaderEffectTime = 3.5;
+	let secondsUntilNavigate = -loaderEffectTime;
+	let intervalClock = undefined;
+	window.addEventListener('load', () => intervalClock = setInterval(
 		() => {++secondsUntilNavigate},
 		1000
 	))
@@ -79,6 +81,8 @@ import axios from "axios";
 			if(changed) return;
 
 			changed = true;
+			
+			if(!intervalClock) clearInterval(intervalClock);
 
 			console.log(changed);
 
