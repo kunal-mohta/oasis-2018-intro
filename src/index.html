@@ -4,6 +4,12 @@
     <title>OASIS 2018 | Intro</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property = "og:site_name" content = "OASIS'18">
+    <meta property = "og:title" content = "OASIS'18 | Intro">
+    <meta property = "og:description" content = "The official website of the awesome cultural festival of BITS Pilani, Pilani Campus - 2018 Edition">
+    <meta property = "og:image" content = "https://bits-oasis.org/register/media/og_oasis_logo.jpg">
+    <meta property = "og:url" content = "https://bits-oasis.org/">
+    <meta property = "og:type" content = "business.business">
     <link rel="shortcut icon" href="https://bits-oasis.org/2017/static/pcradmin/images/Oasis-Logo.png" />
     <style>
         @font-face {
@@ -1263,7 +1269,7 @@
 
 <body>
     <!-- Loader -->
-    <div id="loader-wrapper">
+    <div id="loader-wrapper" style="overflow: hidden">
         <div id="main-loader">
             <div class="ring el-1"></div>
             <div class="ring el-2"></div>
@@ -1303,7 +1309,7 @@
         </div>
     </div>
     <!-- theme wrapper -->
-    <div id="theme-wrapper" class="main-wrapper">
+    <div id="theme-wrapper" class="main-wrapper" style="display: none">
         <div class="main-wrapper-background"></div>
         <div class="main-container">
             <div class="main-container-background"></div>
@@ -1315,7 +1321,10 @@
     </div>
 
     <!-- content wrapper -->
-    <div id="content-wrapper" class="main-wrapper">
+    <div id="content-wrapper" class="main-wrapper" style="display: none">
+        <div id="hot-container">
+            <img src="./assets/imgs/secret.jpg" alt="h0t pix" id="hot-img" style="display: none">
+        </div>
 		<div id = "prereg-msg-overlay">
 			<div id = "prereg-msg-container">
 				<div id = "prereg-msg"></div>
@@ -1345,7 +1354,7 @@
                         <span>SPONSORS</span>
                     </li>
                     <li id="prereg-nav">
-                        <span>PREREG</span>
+                        <span>AMBASSADOR</span>
                     </li>
                     <li id="contact-nav">
                         <span>CONTACT</span>
@@ -1371,7 +1380,7 @@
                         <span>SPONSORS</span>
                     </li>
                     <li id="mobile-prereg-nav">
-                        <span>PREREG</span>
+                        <span>AMBASSADOR</span>
                     </li>
                     <li id="mobile-contact-nav">
                         <span>CONTACT</span>
@@ -1458,7 +1467,7 @@
                 </div>
 
 				<div id = "prereg" class = "content-page">
-					<div class = "prereg-heading theme-color-text heading">PRE-REG</div>
+					<div class = "prereg-heading theme-color-text heading">CAMPUS AMBASSADOR REGISTRATION</div>
 
 					<form id = "prereg-form">
 						<input type = "text" name = "name" id = "prereg-input-name" placeholder="NAME" />
