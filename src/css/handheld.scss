@@ -315,7 +315,15 @@
         width: 100%;
         padding: 15px;
     }
-}
-#about-nav {
-	display: flex;
+
+    #about-nav {
+        display: flex;
+    }
+
+    /* sponsors */
+    .sponsors-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

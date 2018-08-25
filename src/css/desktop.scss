@@ -399,6 +399,47 @@
         height: 50%;
         width: 50%;
     }
+
+    /* sponsors */
+    $maxSponsorImgHeight: 150px;
+    #sponsors {
+        width: 84vw;
+    }
+
+    .sponsors-content {
+        overflow-y: hidden;
+        padding-bottom: 10vh;
+    }
+
+    .sponsor {
+        width: 300px;
+        height: $maxSponsorImgHeight;
+        padding: 0 10px 0px 10px;
+        margin-bottom: 70px;
+
+        .sponsor-img {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div {
+                max-height: 100%;
+            }
+        }
+
+        .sponsor-title {
+            color: $firstThemeColor;
+            font-family: 'ikaros';
+            font-size: 130%;
+            padding-top: 5px;
+        }
+
+        img {
+            max-height: $maxSponsorImgHeight;
+            width: 100%;
+        }
+    }
 }
 
 @media all and ( max-height: 600px ) and ( orientation: landscape ) {
