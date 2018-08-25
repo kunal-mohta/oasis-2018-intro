@@ -8,6 +8,7 @@ import "./home";
 import "./prereg";
 // import "./video";
 import "./contact";
+import "./analytics"
 // import "./glitch";
 
 // CSS Imports
