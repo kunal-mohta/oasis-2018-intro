@@ -408,6 +408,8 @@
 }
 
 @media all and ( max-height: 600px ) and ( orientation: landscape ) {
+    $firstThemeColor: #2D8ED8;
+
     #days-countdown {
         bottom: 3px;
         font-size: 12px;
@@ -459,6 +461,43 @@
 
     .g-recaptcha {
         transform: scale(0.77);
+    }
+
+    $maxSponsorImgHeight: 150px;
+
+    .sponsors-content {
+        overflow-y: hidden;
+        padding-bottom: 10vh;
+    }
+
+    .sponsor {
+        width: 300px;
+        height: $maxSponsorImgHeight;
+        padding: 0 10px 0px 10px;
+        margin-bottom: 70px;
+
+        .sponsor-img {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div {
+                max-height: 100%;
+            }
+        }
+
+        .sponsor-title {
+            color: $firstThemeColor;
+            font-family: 'ikaros';
+            font-size: 130%;
+            padding-top: 5px;
+        }
+
+        img {
+            max-height: $maxSponsorImgHeight;
+            max-width: 100%;
+        }
     }
 }
 @media all and (min-width: 600px) and ( max-width: 800px ), all and (max-height: 500px) and (orientation: landscape) {
