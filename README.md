@@ -1,5 +1,7 @@
 # oasis-2018-intro
 
+Official Introductory website for OASIS 2018 - cultural fest at BITS Pilani, one of the largest intercollegiate cultural fest in India.
+
 ### Screencasts
 Loading page
 
